@@ -4,7 +4,7 @@
 Frontend Team:
 [Владислав Миронов](https://github.com/vladmir26)
 [Евгения Макеева](https://github.com/EvaM25)
-[Екатерина](https://github.com/catherinsmi)
+[Екатерина Смирнова](https://github.com/catherinsmi)
 [Кристина Новикова](https://github.com/nookismile)
 [Марина Моисеенко](https://github.com/marrollyn)
 [Наиля Казачук](https://github.com/Nailusha)
@@ -16,6 +16,7 @@ Project details:
 [GitHub Page](https://mariiabel.github.io/msu-library/)
 [Figma design](https://www.figma.com/design/SNHlX8dZEVNcOhyMzh9Asf/DMVN-TZ?node-id=0-1&t=U0Sg0IhMcvOlFqSs-0) 
 [Discussions](https://github.com/MariiaBel/msu-library/discussions)
+[Wiki](https://github.com/MariiaBel/msu-library/wiki/Instractions)
 
 
 We use it to build a project:
@@ -49,5 +50,7 @@ How we work with the repositories. Rules to follow:
     MSU-69639434-md-docs
     ```
 - Code review is required before pushing to the main branch. Everyone on the team can review code
+
+- [Video how to work with project](https://drive.google.com/file/d/1srBw3dUKgCt_Z2iNkQ1-uGUTjkZUa-hQ/view?usp=sharing)
 
     
