@@ -8,7 +8,7 @@ Frontend Team:
 [Кристина Новикова](https://github.com/nookismile)
 [Марина Моисеенко](https://github.com/marrollyn)
 [Наиля Казачук](https://github.com/Nailusha)
-[Мария Белогубова](https://github.com/vladmir26)
+[Мария Белогубова](https://github.com/mariiabel)
 
 ---
 Project details:
