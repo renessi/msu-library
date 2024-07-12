@@ -5,8 +5,7 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "lint": "eslint .",
-    "format": "prettier —write .",
+    "lint": "eslint . && prettier —write .",
     "prepare": "husky",
     "test": ""
   },
