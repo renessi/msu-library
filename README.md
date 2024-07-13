@@ -40,6 +40,11 @@ We use it to build a project:
 - ES6, HTML and SCSS
 - Desktop First + Responsive
 - [JSDoc](https://jsdoc.app/)
+- [BEM for styles](https://ru.bem.info/methodology/naming-convention/#%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D0%B0-%D1%84%D0%BE%D1%80%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D0%B8%D0%BC%D0%B5%D0%BD). No-namespace styles
+    ```
+    blockName__elemName _modName
+    ```
+- 
 
 How we work with the repositories. Rules to follow:
 
