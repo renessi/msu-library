@@ -1,5 +1,6 @@
 import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
+import eslintPlugin from 'vite-plugin-eslint'
 import {resolve} from 'path'
 
 export default defineConfig({
@@ -19,5 +20,6 @@ export default defineConfig({
         catalog: resolve(__dirname, 'src/catalog.html')
       }
     }
-}
+},
+  plugins: [eslintPlugin()]
 })
