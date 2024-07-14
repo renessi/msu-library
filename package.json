@@ -5,19 +5,26 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "lint": "eslint . && prettier —write .",
-    "prepare": "husky",
-    "test": ""
+    "lint": "eslint . && prettier --write .",
+    "prepare": "husky"
   },
   "devDependencies": {
     "eslint": "^9.6.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.7",
+    "prettier": "^3.3.2",
     "vite": "^5.3.3",
     "vite-plugin-eslint": "^1.8.1"
   },
   "dependencies": {
-    "husky": "^9.0.11",
-    "prettier": "^3.3.2",
     "sass": "^1.77.6",
     "save-dev": "^0.0.1-security"
+  },
+  "lint-staged": {
+    "src/*.{js,ts,html}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "src/*.scss": "prettier --write"
   }
 }
