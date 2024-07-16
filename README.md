@@ -1,6 +1,7 @@
 # MSU knowledge library
 
 ---
+
 Frontend Team:<br>
 [Владислав Миронов](https://github.com/vladmir26)<br>
 [Евгения Макеева](https://github.com/EvaM25)<br>
@@ -11,6 +12,7 @@ Frontend Team:<br>
 [Мария Белогубова](https://github.com/mariiabel)
 
 ---
+
 Project details:
 
 [GitHub Page](https://mariiabel.github.io/msu-library/)<br>
@@ -19,40 +21,37 @@ Project details:
 [Wiki](https://github.com/MariiaBel/msu-library/wiki/Instractions)<br>
 [MSULibraryAPI](https://app.swaggerhub.com/apis-docs/MariiaBel/MSULibraryAPI/1.0.0)<br>
 
-
 We use it to build a project:
 
 - FSD (Feature-Sliced Design)
 - Semantic Comment Msg
-    Format: 
-    ```
-    <type>(<scope>): <subject>
-    ```
-        
-    **feat**: (new feature for the user, not a new feature for build script)<br>
-    **fix**: (bug fix for the user, not a fix to a build script)<br>
-    **docs**: (changes to the documentation)<br>
-    **style**: (formatting, missing semi colons, etc; no production code change)<br>
-    **refactor**: (refactoring production code, eg. renaming a variable)<br>
-    **test**: (adding missing tests, refactoring tests; no production code change)<br>
-    **chore**: (updating grunt tasks etc; no production code change)<br>
+  Format:
+  ```
+  <type>(<scope>): <subject>
+  ```
+  **feat**: (new feature for the user, not a new feature for build script)<br>
+  **fix**: (bug fix for the user, not a fix to a build script)<br>
+  **docs**: (changes to the documentation)<br>
+  **style**: (formatting, missing semi colons, etc; no production code change)<br>
+  **refactor**: (refactoring production code, eg. renaming a variable)<br>
+  **test**: (adding missing tests, refactoring tests; no production code change)<br>
+  **chore**: (updating grunt tasks etc; no production code change)<br>
 - [Vite](https://vitejs.dev/) vanilla template
 - ES6, HTML and SCSS
 - Desktop First + Responsive
 - [JSDoc](https://jsdoc.app/)
+- [Storybook](https://storybook.js.org/docs) for UI docs
 
 How we work with the repositories. Rules to follow:
 
 - Branch Name:
-    ```
-    MSU-<taskNumber>-<taskShortTitle>
-    ```
-    Example:
-    ```
-    MSU-69639434-md-docs
-    ```
+  ```
+  MSU-<taskNumber>-<taskShortTitle>
+  ```
+  Example:
+  ```
+  MSU-69639434-md-docs
+  ```
 - Code review is required before pushing to the main branch. Everyone on the team can review code
 
 - [Video how to work with project](https://drive.google.com/file/d/1srBw3dUKgCt_Z2iNkQ1-uGUTjkZUa-hQ/view?usp=sharing)
-
-    
