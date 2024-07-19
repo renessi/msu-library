@@ -1,8 +1,17 @@
+import storybook from "eslint-plugin-storybook";
+
 export default [
-    {
-        rules: {
-            "no-unused-vars": "error",
-            "no-undef": "error"
-        }
-    }
+  {
+    files: ["src/stories/*.js"],
+    plugins: {
+      storybook: storybook,
+    },
+  },
+  {
+    files: ["src/!(stories)/*.js"],
+    rules: {
+      "no-unused-vars": "error",
+      "no-undef": "error",
+    },
+  },
 ];
