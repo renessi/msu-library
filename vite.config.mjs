@@ -24,8 +24,6 @@ const getDirectories = async (source) => {
 
 await getDirectories(join(__dirname, "./src"));
 
-console.log(Array.from(partialDirectories));
-console.log(catalogContent);
 
 const pageData = {
   "/index.html": {
