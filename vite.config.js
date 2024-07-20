@@ -22,11 +22,11 @@ export default defineConfig({
       },
     },
   },
-  plugins: [eslintPlugin(),
-            createSvgSpritePlugin({
-            symbolId: 'icon-[name]-[hash]',
-            input: '**/shared/img/svg/**.svg',
-            output: 'dist/img/sprite.svg'
-          }),
-           ]
+  plugins: [
+    eslintPlugin(),
+    createSvgSpritePlugin({
+      symbolId: 'icon-[name]',
+      include: '**/src/shared/img/svg/*.svg',
+    }),
+  ]
 });
