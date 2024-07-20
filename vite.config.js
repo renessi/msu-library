@@ -2,6 +2,7 @@ import { fileURLToPath, URL } from "node:url";
 import { defineConfig } from "vite";
 import eslintPlugin from "vite-plugin-eslint";
 import { resolve } from "path";
+import createSvgSpritePlugin from 'vite-plugin-svg-sprite';
 
 export default defineConfig({
   root: resolve(__dirname, "src"),
@@ -21,5 +22,11 @@ export default defineConfig({
       },
     },
   },
-  plugins: [eslintPlugin()],
+  plugins: [eslintPlugin(),
+            createSvgSpritePlugin({
+            symbolId: 'icon-[name]-[hash]',
+            input: '**/shared/img/svg/**.svg',
+            output: 'dist/img/sprite.svg'
+          }),
+           ]
 });
