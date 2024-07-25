@@ -1,0 +1,19 @@
+import { Meta, Title, IconGallery, IconItem} from "@storybook/blocks";
+import { icons } from "../stories/svgIcons.js"
+
+<Meta title="System/SvgIcons"/>
+
+<IconGallery>
+  {icons
+    .map(icon => {
+      console.log(icon)
+      return (
+        <IconItem key={icon.name} name={icon.icon}>
+          <svg>
+            <use xlinkHref={'#' + icon.icon}></use>
+          </svg>
+        </IconItem>
+      )
+    }
+    )}
+</IconGallery>
