@@ -3,7 +3,7 @@ import './colors.scss';
 
 export default {
     title: "Component/Colors",
-    tags: ["autodocs"],
+    // tags: ["autodocs"],
     argTypes: {
 
     }

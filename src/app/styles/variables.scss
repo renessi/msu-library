@@ -10,8 +10,8 @@
 --clr-light-gray: #D6D5D5; 
 --clr-pale-gray: #ACACAC; 
 //   Цветовая тема для типографики
---basefont: #FFFFFF;
---basefont-light: #D6D5D5;
+--basefont: 255, 255, 255; //#FFFFFF
+--basefont-light: 214, 213, 213; //#D6D5D5
 --basefontpale: #ACACAC;
 
 --ff-primary: "Lato", sans-serif;
@@ -19,4 +19,7 @@
 
 --fs-small: 14px;
 --fs-base: 16px;
+
+--clr-gray-34: 34, 32, 33;  //#222021
+--clr-gray-25: 37, 38, 41; //#252629
 }
