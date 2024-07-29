@@ -6,6 +6,7 @@ import handlebars from "vite-plugin-handlebars";
 import { readdir } from "fs/promises";
 import { join } from "node:path";
 import catalogContent from './src/pages/catalog/catalog.js';
+import createSvgSpritePlugin from 'vite-plugin-svg-sprite';
 
 const partialDirectories = new Set();
 
@@ -60,6 +61,10 @@ export default defineConfig({
       context(pagePath) {
         return pageData[pagePath];
       },
+    }),
+    createSvgSpritePlugin({
+      symbolId: 'icon-[name]',
+      include: '**/src/shared/img/svg/*.svg',
     }),
   ],
 });
