@@ -1,18 +1,14 @@
 :root {
 
---clr-primary-black: #222021; 
---clr-primary-gray: #252629;
-//   Цветовая тема для сайд бар
---clr-secondary-gray: #2A2C30; 
---clr-selected: #342148; 
-//   Цветовая тема для иконок
---clr-dark-gray: #4D4E51; 
---clr-light-gray: #D6D5D5; 
---clr-pale-gray: #ACACAC; 
-//   Цветовая тема для типографики
---basefont: 255, 255, 255; //#FFFFFF
---basefont-light: 214, 213, 213; //#D6D5D5
---basefontpale: #ACACAC;
+--clr-primary-black: 34, 32, 33; //#222021
+--clr-primary-grey: 37, 38, 41; //#252629
+--clr-secondary-grey: 42, 44, 48; //#2A2C30 
+--clr-selected: 52, 33, 72; //#342148
+--clr-dark-grey: 77, 78, 81; //#4D4E51
+--clr-light-grey: 214, 213, 213; //#D6D5D5
+--clr-pale-grey: 172, 172, 172;  //#ACACAC
+--clr-white: 255, 255, 255; //#FFFFFF
+
 
 --ff-primary: "Lato", sans-serif;
 --ff-secondary: "Inter", sans-serif;
@@ -20,6 +16,6 @@
 --fs-small: 14px;
 --fs-base: 16px;
 
---clr-gray-34: 34, 32, 33;  //#222021
---clr-gray-25: 37, 38, 41; //#252629
 }
+
+
