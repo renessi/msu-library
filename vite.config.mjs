@@ -64,7 +64,7 @@ export default defineConfig({
     }),
     createSvgSpritePlugin({
       symbolId: 'icon-[name]',
-      include: '**/src/shared/img/svg/*.svg',
+      include: '**/src/06_shared/img/svg/*.svg',
     }),
   ],
 });
