@@ -15,7 +15,7 @@
     "@storybook/addon-essentials": "^8.2.2",
     "@storybook/addon-interactions": "^8.2.2",
     "@storybook/addon-links": "^8.2.2",
-    "@storybook/blocks": "^8.2.2",
+    "@storybook/blocks": "^8.2.6",
     "@storybook/html": "^8.2.2",
     "@storybook/html-vite": "^8.2.2",
     "@storybook/test": "^8.2.2",
