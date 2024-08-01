@@ -1,0 +1,46 @@
+import { Meta, ColorPalette, ColorItem } from "@storybook/blocks";
+import "../app/styles/variables.scss";
+
+<Meta title="System/Colors" />
+
+<h1>Color Palette MSU knowledge library</h1>
+<p>All colors are set into project by css variables and can be used by <code>color: rgb(var(--clr-primary-black))</code></p>
+<ColorPalette >
+  <ColorItem
+    title="Primary"
+    subtitle="Black"
+    colors={{
+      '#222021': 'rgb(var(--clr-primary-black))',
+    }}
+  />
+    <ColorItem
+   
+    title="Dark"
+    subtitle="Darker greys"
+    colors={{
+      '#4D4E51': 'rgb(var(--clr-dark-grey))',
+      '#2A2C30': 'rgb(var(--clr-secondary-grey))',
+      '#252629': 'rgb(var(--clr-primary-grey))',
+    }}
+  />
+
+    <ColorItem
+    title="Light"
+    subtitle="Lighter greys"
+    colors={{
+      '#FFFFFF': 'rgb(var(--clr-white))',
+      '#D6D5D5': 'rgb(var(--clr-light-grey))',
+      '#ACACAC': 'rgb(var(--clr-pale-grey))',
+    }}
+
+/>
+
+<ColorItem
+  title="Accent"
+  subtitle="Purple"
+  colors={{
+    "#342148": "rgb(var(--clr-selected))",
+  }}
+/>
+
+</ColorPalette>
