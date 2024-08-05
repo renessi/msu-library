@@ -1,10 +1,24 @@
-import { fn } from "@storybook/test";
-import { roundCheckbox } from './roundCheckbox';
+import { createRoundCheckbox } from "./roundCheckbox";
 
 export default {
-    title: 'Component/RoundCheckbox',
+    title: "Component/Round Checkbox",
     tags: ["autodocs"],
-    render: () => roundCheckbox(),
+    render: (args) => {
+        return createRoundCheckbox(args);
+    },
+    argTypes: {
+        checked: { control: "boolean" },
+    },
 };
 
-export const Default = {};
+export const Default = {
+    args: {
+        checked: false,
+    },
+};
+
+export const Checked = {
+    args: {
+        checked: true,
+    },
+};
