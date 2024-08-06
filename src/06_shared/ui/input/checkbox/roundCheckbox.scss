@@ -15,20 +15,24 @@
         border-radius: 50%; // Делаем круглый
         background-color: var(--clr-pale-grey); // Начальный цвет фона
         cursor: pointer;
-        border: 1px solid #373737;
+        border: 1px solid rgb(var(--checkbox-border));
         transition: background-color 0.3s ease;
 
         .checkbox-icon {
             width: 9px; // Ширина изображения
             height: 10px; // Высота изображения
             transition: filter 0.3s ease; // Плавный переход для фильтра
+            
+            path {
+                stroke: rgb(var(--checkbox-icon));/* Цвет по умолчанию */
+            }
         }
     }
 
     // Стили при checked
     .round-checkbox:checked + .checkbox-label {
-        border: 1px solid #8226F6;
-        background-color: #8226F6; // Цвет фона при checked
+        border: 1px solid rgb(var(--checkbox-checked));
+        background-color: rgb(var(--checkbox-checked)); // Цвет фона при checked
 
         .checkbox-icon {
             filter: brightness(0) invert(1); // Изменяем цвет иконки при checked

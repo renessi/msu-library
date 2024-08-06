@@ -7,13 +7,13 @@
     display: none;
 }
 
-.round-checkbox:checked+.checkbox-label {
-    border: 1px solid #8226f6;
-    background-color: #8226f6;
+.round-checkbox:checked + .checkbox-label {
+    border: 1px solid rgb(var(--checkbox-checked));
+    background-color: rgb(var(--checkbox-checked));
 }
 
-.round-checkbox+.checkbox-icon {
-    color: #525252;
+.round-checkbox + .checkbox-icon {
+    color: rgb(var(--checkbox-icon));
 }
 
 .checkbox-icon {
@@ -28,17 +28,17 @@
     width: 17px;
     height: 18px;
     border-radius: 50%;
-    background-color: #252629;
+    background-color: rgb(var(--clr-primary-grey));
     cursor: pointer;
-    border: 1px solid #373737;
+    border: 1px solid rgb(var(--checkbox-border));
 }
 
 .checkbox-icon path {
-    stroke: #525252;/* Цвет по умолчанию */
+    stroke: rgb(var(--checkbox-icon));/* Цвет по умолчанию */
     transition: stroke 0.3s ease;/* Плавный переход цвета */
 }
 
 /* Изменяем цвет stroke, когда чекбокс отмечен */
 .round-checkbox:checked+.checkbox-label .checkbox-icon path {
-    stroke: #ffffff;
+    stroke: rgb(var(--clr-white));
 }
