@@ -1,0 +1,20 @@
+.light-button {
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: var(--fs-base);
+  line-height: var(--lh-base);
+  color: rgb(var(--clr-pale-grey));
+  text-align: center;
+  background: transparent;
+  border: 1px solid rgb(var(--clr-pale-grey));
+  border-radius: var(--br-base);
+  cursor: pointer;
+  transition: all .3s ease;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: rgb(var(--clr-white));
+      border: 1px solid rgb(var(--clr-white));
+    }
+}
