@@ -1,0 +1,20 @@
+.btn {
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    background: linear-gradient(146.92deg, rgb(var(--clr-gr-blue)) -31.797%, rgb(var(--clr-gr-purple)) 100%);
+    color: rgb(var(--clr-white));
+    font-family: var(--ff-primary);
+    font-size: var(--ff-base);
+    width: 187px;
+    max-width: 187px;
+    border: none;
+    border-radius: 48px;
+    padding: 10px 20px;
+}
+
+.btn:hover {
+    background: rgb(var(--clr-selected));
+    color: rgb(var(--clr-dark-grey));
+}
