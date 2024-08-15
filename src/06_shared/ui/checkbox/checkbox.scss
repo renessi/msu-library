@@ -40,14 +40,16 @@
   &:checked + span::after{
     display: block;
   } 
+
   &:focus + span::before{
-  border-color: #9747ff;
-  }
+    border-color: #9747ff;
+  } 
+
   &:hover + span::before{
     border-color: #8937f4;
  }
   &:hover + span::before{
-  border-color: #802af1;
+    border-color: #802af1;
  }  
 }    
 }
