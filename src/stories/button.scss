@@ -11,11 +11,11 @@
   border-radius: var(--br-base);
   cursor: pointer;
   transition: all .3s ease;
-}
 
-.button:hover,
-.button:focus,
-.button:active {
-  color: rgb(var(--clr-white));
-  border: 1px solid rgb(var(--clr-white));
+  &:hover,
+  &:focus,
+  &:active {
+    color: rgb(var(--clr-white));
+    border: 1px solid rgb(var(--clr-white));
+  }
 }

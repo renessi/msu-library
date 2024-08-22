@@ -1,25 +1,12 @@
-import "./button.css";
+import "../06_shared/ui/button/button.scss";
 
 export const createButton = ({
-  primary = false,
-  size = "medium",
-  backgroundColor,
-  label,
-  onClick,
-}) => {
+                                    label
+                                  }) => {
   const btn = document.createElement("button");
   btn.type = "button";
   btn.innerText = label;
-  btn.addEventListener("click", onClick);
-
-  const mode = primary
-    ? "storybook-button--primary"
-    : "storybook-button--secondary";
-  btn.className = ["storybook-button", `storybook-button--${size}`, mode].join(
-    " ",
-  );
-
-  btn.style.backgroundColor = backgroundColor;
+  btn.className = 'button';
 
   return btn;
 };
