@@ -28,7 +28,7 @@ await getDirectories(join(__dirname, "./src"));
 
 const pageData = {
   "/index.html": {
-    title: "МГУ база знаний",
+    title: "МГУ база знаний"
   },
   "/catalog.html": {
     title: "МГУ каталог",
