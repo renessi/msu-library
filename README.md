@@ -8,7 +8,6 @@ Frontend Team:<br>
 [Екатерина Смирнова](https://github.com/catherinsmi)<br>
 [Кристина Новикова](https://github.com/nookismile)<br>
 [Марина Моисеенко](https://github.com/marrollyn)<br>
-[Наиля Казачук](https://github.com/Nailusha)<br>
 [Мария Белогубова](https://github.com/mariiabel)
 
 ---
