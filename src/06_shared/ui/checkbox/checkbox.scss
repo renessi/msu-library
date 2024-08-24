@@ -1,5 +1,5 @@
 .checkbox {
-  span{
+  &__span{
     position: relative;
     display: flex;
     align-items: center;
@@ -26,29 +26,30 @@
       margin-top: -12px;
       width: 25px;
       height: 25px;
-      background-image: url(../06_shared/img/svg/check.svg);
+      background-image: linear-gradient( 45deg, #9708CC, #43CBFF );
+      mask-image: url(../06_shared/img/svg/check.svg);
       background-repeat: no-repeat;
       background-position: center;
      }
   }
 
-  input{
+  &__input{
     opacity: 0;
     width: 0;
     height: 0;
 
-  &:checked + span::after{
+  &:checked + .checkbox__span::after{
     display: block;
   } 
 
-  &:focus + span::before{
+  &:focus + .checkbox__span::before{
     border-color: #9747ff;
   } 
 
-  &:hover + span::before{
+  &:hover + .checkbox__span::before{
     border-color: #8937f4;
  }
-  &:hover + span::before{
+  &:hover + .checkbox__span::before{
     border-color: #802af1;
  }  
 }    
