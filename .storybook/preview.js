@@ -12,4 +12,4 @@ const preview = {
 
 export default preview;
 
-import "../src/index.scss"
+import "@/index.scss"

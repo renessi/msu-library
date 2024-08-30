@@ -1,7 +1,10 @@
-@import "./01_app/styles/variables.scss";
-@import "./01_app/styles/global.scss";
+@import "@/01_app/styles/variables.scss";
+@import "@/01_app/styles/global.scss";
 
 //ui
-@import "./06_shared/ui/button/button.scss";
-@import "./06_shared/ui/checkbox/checkbox.scss";
-@import "./04_features/filter/filter.scss";
+@import "@/06_shared/ui/button/button.scss";
+@import "@/06_shared/ui/checkbox/checkbox.scss";
+@import "@/04_features/filter/ui/filter.scss";
+
+//containers
+@import "@/04_features/search/ui/search.scss";

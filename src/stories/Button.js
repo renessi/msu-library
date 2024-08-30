@@ -1,5 +1,3 @@
-import "../06_shared/ui/button/button.scss";
-
 export const createButton = ({
   type = "default",
   label,
