@@ -19,3 +19,5 @@ const gridOptions = {
 
 const eDiv = document.querySelector('#grid');
 const gridApi = agGrid.createGrid(eDiv, gridOptions);
+
+export gridApi;
