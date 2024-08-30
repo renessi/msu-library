@@ -1,0 +1,28 @@
+.btn--accent {
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    background: linear-gradient(146deg, rgb(var(--clr-gr-blue)) -31%, rgb(var(--clr-gr-purple)) 100%);
+    color: rgb(var(--clr-white));
+    font-family: var(--ff-primary);
+    font-size: var(--ff-base);
+    width: 100%;
+    max-width: 187px;
+    border: none;
+    border-radius: 48px;
+    padding: 10px 20px;
+}
+
+.btn--accent:hover {
+    background: rgb(var(--clr-selected));
+}
+
+.btn--accent:focus,
+.btn--accent:focus-visible {
+    outline: 5px solid rgb(var(--clr-white));
+}
+
+.btn--accent:active {
+    background: rgb(var(--clr-gr-blue));
+}

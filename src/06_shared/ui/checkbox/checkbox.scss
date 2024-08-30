@@ -11,7 +11,7 @@
       margin-right: 6px;
       left: 0;
       top: 0;
-      width: 16px;
+      min-width: 16px;
       height: 16px;
       border: 1px solid #ACACAC;
       border-radius: 4px;
@@ -27,7 +27,7 @@
       width: 25px;
       height: 25px;
       background-image: linear-gradient( 45deg, #9708CC, #43CBFF );
-      mask-image: url(../06_shared/img/svg/check.svg);
+      mask-image: url(@/06_shared/img/svg/check.svg);
       background-repeat: no-repeat;
       background-position: center;
      }
@@ -49,7 +49,7 @@
   &:hover + .checkbox__span::before{
     border-color: #8937f4;
  }
-  &:hover + .checkbox__span::before{
+  &:active + .checkbox__span::before{
     border-color: #802af1;
  }  
 }    
