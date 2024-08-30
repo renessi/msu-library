@@ -1,5 +1,6 @@
-import '../04_features/search/ui/search.scss';
-import iconUser from "../06_shared/img/svg/arrow-right.svg";
+
+import '@/index.scss';
+import iconUser from "@/06_shared/img/svg/arrow-right.svg";
 
 
 export const createSearch = ({label}) => {
@@ -7,14 +8,22 @@ export const createSearch = ({label}) => {
     const search = document.createElement("search");
 
     search.innerHTML = `
-        <form class="search">
-            <input class="search__input" type="search" placeholder="${label}">
-            <button class="search__round">
-            <svg width="24" height="24">
-                <use xlink:href="#icon-arrow-right"></use>
-            </svg>
-            </button>
-        </form>
+        <div style="background: rgba(0, 0, 0, 1)">
+        <search class="search">
+            <form  class="search__form">
+                <input
+                class="search__input"
+                type="search"
+                placeholder="Поиск по материалам"
+                />
+                <button class="search__round">
+                <svg>
+                    <use href="#icon-arrow-right"></use>
+                </svg>
+                </button>
+            </form>
+            </search>
+        </div>
         `;
     return search
 }

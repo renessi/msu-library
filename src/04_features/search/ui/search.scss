@@ -7,24 +7,27 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .search {
-    width: max-content;
-    display: flex;
-    align-items: center;
-    padding: 4px;
-    border-radius: 56px;
-    background: rgb(var(--clr-primary-grey));
-    transition: background .25s;  
+    width: 100%;
+    max-width: 700px;
+    &__form {
+        display: flex;
+        align-items: center;
+        padding: 4px;
+        border-radius: 56px;
+        background: rgb(var(--clr-primary-grey));
+        transition: background .25s;  
 
-    &:hover {
-        background: rgb(var(--clr-secondary-grey));
-    }
+        &:hover {
+            background: rgb(var(--clr-secondary-grey));
+        }
 
-    &:focus-within {
-        background: rgb(var(--clr-secondary-grey));
-    }
+        &:focus-within {
+            background: rgb(var(--clr-secondary-grey));
+        }
 
-    &:focus-within &__round {
-        background: rgb(var(--clr-light-grey));
+        &:focus-within &__round {
+            background: rgb(var(--clr-light-grey));
+        }
     }
 
     &__input {
@@ -36,7 +39,7 @@ input[type="search"]::-webkit-search-results-decoration {
         outline: none;
         border: none;
         background: transparent;
-        width: 614px;
+        width: 100%;
     }
 
     &__round {

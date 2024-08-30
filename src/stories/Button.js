@@ -1,4 +1,4 @@
-import "../06_shared/ui/button/button.scss";
+import '@/index.scss';
 
 export const createButton = ({
   type = "default",
