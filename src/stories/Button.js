@@ -1,5 +1,3 @@
-import '@/index.scss';
-
 export const createButton = ({
   type = "default",
   label,

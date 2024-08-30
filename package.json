@@ -15,6 +15,7 @@
     "@storybook/addon-essentials": "^8.2.2",
     "@storybook/addon-interactions": "^8.2.2",
     "@storybook/addon-links": "^8.2.2",
+    "@storybook/addon-styling-webpack": "^1.0.0",
     "@storybook/blocks": "^8.2.6",
     "@storybook/html": "^8.2.2",
     "@storybook/html-vite": "^8.2.2",
@@ -31,7 +32,6 @@
     "vite-plugin-svg-sprite": "^0.5.2"
   },
   "dependencies": {
-    "sass": "^1.77.6",
     "save-dev": "^0.0.1-security"
   },
   "lint-staged": {

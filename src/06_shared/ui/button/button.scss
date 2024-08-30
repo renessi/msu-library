@@ -18,11 +18,6 @@
     background: rgb(var(--clr-selected));
 }
 
-.btn--accent:focus,
-.btn--accent:focus-visible {
-    outline: 5px solid rgb(var(--clr-white));
-}
-
 .btn--accent:active {
     background: rgb(var(--clr-gr-blue));
 }

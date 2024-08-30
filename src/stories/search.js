@@ -1,5 +1,3 @@
-
-import '@/index.scss';
 import iconUser from "@/06_shared/img/svg/arrow-right.svg";
 
 
