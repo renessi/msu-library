@@ -1,12 +1,19 @@
 import "../06_shared/ui/button/button.scss";
 
 export const createButton = ({
-                                    label
-                                  }) => {
-  const btn = document.createElement("button");
-  btn.type = "button";
-  btn.innerText = label;
-  btn.className = 'button';
+                                 type = "default",
+                                 label,
+                                 onClick,
+                             }) => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.innerText = label;
+    btn.addEventListener("click", onClick);
 
-  return btn;
+    let mode = '';
+    if(type === 'accent') mode = "btn--accent"
+
+    btn.className = ["btn", mode].join(" ");
+
+    return btn;
 };

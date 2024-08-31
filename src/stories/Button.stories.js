@@ -24,11 +24,17 @@ export default {
   args: { onClick: fn() },
 };
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Primary = {
-  args:{
-    primary:true,
-    label:"Скачать все",
-    backgroundColor:"#aa0000"
+export const Accent = {
+  args: {
+    type: 'accent',
+    label: 'Добавить материал',
+  },
+};
+
+export const Default = {
+  args: {
+    primary: true,
+    label: 'Скачать все',
+    backgroundColor: '#aa0000'
   },
 };
