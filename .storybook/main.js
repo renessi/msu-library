@@ -6,10 +6,19 @@ const config = {
     "@storybook/addon-essentials",
     "@chromatic-com/storybook",
     "@storybook/addon-interactions",
+    "@storybook/addon-styling-webpack"
   ],
   framework: {
     name: "@storybook/html-vite",
     options: {},
   },
+  webpackFinal: async (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@': path.resolve(__dirname, "../src"),
+    };
+
+    return config;
+  }
 };
 export default config;
