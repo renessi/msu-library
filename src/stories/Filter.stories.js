@@ -13,6 +13,6 @@ export default {
 
 export const DefaultFilter = {
     args: {
-        label: "Поиск",
+        label: "Предмет",
     },
 };
