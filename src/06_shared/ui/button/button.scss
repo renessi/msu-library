@@ -1,5 +1,6 @@
 .btn {
   display: inline-block;
+  box-sizing: border-box;
   max-width: 200px;
   padding: 4px 8px;
   font-size: var(--fs-base);
@@ -13,20 +14,33 @@
   cursor: pointer;
   transition: all .3s ease;
 
-    &:hover,
-    &:focus,
-    &:active {
-      color: rgb(var(--clr-white));
-      border: 1px solid rgb(var(--clr-white));
-    }
+  &:hover,
+  &:focus,
+  &:active {
+    color: rgb(var(--clr-white));
+    border: 1px solid rgb(var(--clr-white));
+  }
 
   &--accent {
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    background: linear-gradient(146deg, rgb(var(--clr-gr-blue)) -31%, rgb(var(--clr-gr-purple)) 100%);
+    color: rgb(var(--clr-white));
+    font-family: var(--ff-primary);
+    font-size: var(--ff-base);
+    width: 100%;
+    max-width: 187px;
+    border: none;
+    border-radius: 48px;
     padding: 10px 20px;
     color: rgb(var(--clr-white));
     background: linear-gradient(146deg, rgb(var(--clr-gr-blue)) -31%, rgb(var(--clr-gr-purple)) 100%);
     border: none;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background: rgb(var(--clr-selected));
       border: none;
     }

@@ -6,13 +6,10 @@
     <title>{{title}}</title>
   </head>
   <body>
-    <script type="module">
-      import iconUser from "./06_shared/img/svg/arrow-right.svg";
-    </script>
-    <svg>
-      <use xlink:href="#icon-arrow-right"></use>
-    </svg>
-    {{> header}} {{> footer}} {{> button}}
+    {{> icons-import}}<!-- do not delete -->
+
+    {{> header}} {{> button}} {{> button-accent}} {{> checkbox}} {{> search}}
+    {{> filter}}
   </body>
   <script type="module" src="main.js"></script>
 </html>

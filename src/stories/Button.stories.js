@@ -11,13 +11,11 @@ export default {
     return createButton({ label, ...args });
   },
   argTypes: {
-    backgroundColor: { control: "color" },
     label: { control: "text" },
     onClick: { action: "onClick" },
-    primary: { control: "boolean" },
-    size: {
+    type: {
       control: { type: "select" },
-      options: ["small", "medium", "large"],
+      options: ["default", "accent"],
     },
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
@@ -33,8 +31,6 @@ export const Accent = {
 
 export const Default = {
   args: {
-    primary: true,
     label: 'Скачать все',
-    backgroundColor: '#aa0000'
   },
 };
