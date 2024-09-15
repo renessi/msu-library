@@ -1,3 +1,5 @@
+import "@/index.scss"
+
 /** @type { import('@storybook/html').Preview } */
 const preview = {
   parameters: {
@@ -11,5 +13,3 @@ const preview = {
 };
 
 export default preview;
-
-import "../src/index.scss"
