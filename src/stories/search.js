@@ -6,7 +6,6 @@ export const createSearch = ({label}) => {
     const search = document.createElement("search");
 
     search.innerHTML = `
-        <div style="background: rgba(0, 0, 0, 1)">
         <search class="search">
             <form  class="search__form">
                 <input
@@ -20,8 +19,7 @@ export const createSearch = ({label}) => {
                 </svg>
                 </button>
             </form>
-            </search>
-        </div>
-        `;
+        </search>
+    `;
     return search
 }
