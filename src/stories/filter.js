@@ -7,7 +7,6 @@ export const createFilter = ({label}) => {
     const filter = document.createElement("div");
 
     filter.innerHTML = `
-       <div style="background: rgba(0, 0, 0, 0.7)">
        <div class="filter">
        <div class="filter__top">
          <span class="filter__text">${label}</span>
@@ -26,9 +25,7 @@ export const createFilter = ({label}) => {
            <use xlink:href="#icon-chevron-down"></use>
          </svg>
        </div>
-     </div>
-     
-        </div> `;
+     </div>`;
 
         return filter
 
