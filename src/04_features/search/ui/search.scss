@@ -43,12 +43,10 @@ input[type="search"]::-webkit-search-results-decoration {
     }
 
     &__round {
-        // Center the imported SVG
         display: flex;
         justify-content: center;
         align-items: center;
-        max-width: 38px;
-        width: 100%;
+        min-width: 38px;
         height: 38px;
         border-radius: 37px;
         border: none;

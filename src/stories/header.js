@@ -2,13 +2,21 @@ import iconUser from "@/06_shared/img/svg/arrow-right.svg";
 import iconUserLogin from "@/06_shared/img/svg/user.svg";
 import IconLogo from "@/06_shared/img/svg/logo.svg";
 
-export const createHeader = () => {
-    
+export const createHeader = ({
+    btns
+}) => {
     const header = document.createElement("section");
-   
+
+    let btnsHtml = ''
+    if(btns.indexOf('download') !== -1) btnsHtml += `
+        <button type="button" class="btn" tabindex="0">Скачать все</button>
+    `
+    if(btns.indexOf('addDocs')  !== -1) btnsHtml += `
+        <button type="button" class="btn--accent" tabindex="0">Добавить материал</button>  
+    `
 
     header.innerHTML = `
-    <div style="background: rgba(0, 0, 0, 1); dispay: flex; flex-grow: 1">
+    <div style="background: rgba(0, 0, 0, 1); display: flex; flex-grow: 1">
         <header class="header">
             <svg class="header__logo">
                 <use xlink:href="#icon-logo"></use>
@@ -23,8 +31,7 @@ export const createHeader = () => {
                     </button>
                 </form>
             </search>
-            <button type="button" class="btn" tabindex="0">Скачать все</button>
-            <button type="button" class="btn--accent" tabindex="0">Добавить материал</button>  
+            ${btnsHtml}
             <button class="header__login">
                 <svg class="header__icon">
                     <use href="#icon-user"></use>

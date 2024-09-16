@@ -3,18 +3,28 @@ import { createHeader } from "./header";
 
 
 export default {
-    title: "Component/Header",
+    title: "Container/Header",
     tags: ["autodocs"],
-    render: () => {
-        return createHeader();
+    render: (args) => {
+        console.log(args)
+        return createHeader(args);
     },
-    // argTypes: {
-    //     label: { control: "text" },
-    // },
+    argTypes: {
+        btns: { 
+            control: 'check', 
+            options: ['download', 'addDocs'] 
+        }
+    },
 };
 
-export const DefaultHeader = {
+export const UnauthorizeHeader = {
     args: {
-        
+        btns: []
+    },
+};
+
+export const AdminHeader = {
+    args: {
+        btns: ['download', 'addDocs'] 
     },
 };

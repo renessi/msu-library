@@ -1,14 +1,17 @@
 .header {
+    @extend %container;
     display: flex;
+    gap: 45px;
     align-items: center;
     justify-content: space-between;
-    padding: 44px 71px 41px 50px;
+    padding-top: 40px;
+    padding-bottom: 50px;
     
-    
-
     &__logo {
         width: 178px;
-        height: 54px;
+        &-img {
+            margin-bottom: -30px;
+        }
     }
 
     &__login {
@@ -27,4 +30,8 @@
         width: 22px;
         height: 22px;
     }
+}
+
+.header .search {
+    margin-right: auto;
 }
