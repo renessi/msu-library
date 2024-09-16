@@ -1,5 +1,5 @@
+import "../04_features/search/ui/search.scss";
 import iconUser from "@/06_shared/img/svg/arrow-right.svg";
-
 
 export const createSearch = ({label}) => {
     //Создаем элементы разметки для search

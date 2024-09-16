@@ -1,3 +1,5 @@
+import "../06_shared/ui/checkbox/checkbox.scss";
+
 export const createCheckbox = ({ checked = false, label}) => {
     const check = checked ? "checked" : "";
 
