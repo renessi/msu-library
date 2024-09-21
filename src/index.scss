@@ -1,4 +1,5 @@
 @import "@/01_app/styles/variables.scss";
+@import "@/01_app/styles/extends.scss";
 @import "@/01_app/styles/global.scss";
 
 //ui
@@ -8,6 +9,4 @@
 
 //containers
 @import "@/04_features/search/ui/search.scss";
-
-//entities
-@import "@/05_entities/document/table/table.scss";
+@import "@/03_widgets/header/header.scss";

@@ -24,8 +24,8 @@ const gridTable = () => {
             { field: "file", flex: 4, checkboxSelection: true, filter: true, filterParams: filterParamsText },
             { field: "discipline", filter: true, filterParams: filterParamsText },
             { field: "type", filter: true, filterParams: filterParamsText },
-            { field: "year", filter: 'agNumberColumnFilter',filterParams: filterParamsNumber },
-            { field: "author",filter: true, filterParams: filterParamsText },
+            { field: "year", filter: 'agNumberColumnFilter', filterParams: filterParamsNumber },
+            { field: "author", filter: true, filterParams: filterParamsText },
             { field: "download",
                 cellRenderer: function() {
                     return `
