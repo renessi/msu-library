@@ -1,41 +1,52 @@
-name: Build and Rebuild on Pull Request
+
+name: Deploy static content to Pages
 
 on:
-  pull_request:
-    branches:
-      - '**'
+
   push:
-    branches:
-      - main 
+    branches: ['main']
+
+  workflow_dispatch:
+
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
 
 jobs:
-  build:
+ 
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-
     steps:
-      
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
         with:
-          node-version: '20'  
-
-      
+          node-version: 20
+          cache: 'npm'
       - name: Install dependencies
-        run: npm ci  
-
-     
-      - name: Build project with Vite
+        run: npm ci
+      - name: Build
         run: npm run build
-
-     
-      - name: Upload dist folder
-        uses: actions/upload-artifact@v3
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: dist
-          path: dist
+        
+          path: './dist'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
 
    
