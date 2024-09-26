@@ -21,27 +21,35 @@ const gridTable = () => {
             { file: "УМФ КР2 411 группа.png", discipline: "Уравнения мат. физики", type: "КР", year: 2019, author: "Половинко А.С.", download: "" }
         ],
         columnDefs: [
-            { field: "file", flex: 4, checkboxSelection: true, filter: true, filterParams: filterParamsText },
-            { field: "discipline", filter: true, filterParams: filterParamsText },
-            { field: "type", filter: true, filterParams: filterParamsText },
-            { field: "year", filter: 'agNumberColumnFilter', filterParams: filterParamsNumber },
-            { field: "author", filter: true, filterParams: filterParamsText },
-            { field: "download",
+            { field: "file", flex: 4, checkboxSelection: true, filter: true, filterParams: filterParamsText
+            },
+            { field: "discipline", flex: 2, filter: true, filterParams: filterParamsText},
+            { field: "type", flex: 2, filter: true, filterParams: filterParamsText },
+            { field: "year", flex: 1, filter: 'agNumberColumnFilter', filterParams: filterParamsNumber },
+            { field: "author", flex: 2, filter: true, filterParams: filterParamsText,
                 cellRenderer: function() {
                     return `
-                        <svg class="table-img">
-                            <use xlink:href="#icon-download"></use>
-                        </svg>
+                            <svg class="ag-theme-msu__user-img">
+                                <use xlink:href="#icon-user"></use>
+                            </svg>
+                            <span>Половинко А.С.</span>
+                    `
+                }
+            },
+            { field: "download", flex: 1,
+                cellRenderer: function() {
+                    return `
+                        <button class="ag-theme-msu__btn-download">  
+                            <svg class="ag-theme-msu__download-img">
+                                <use xlink:href="#icon-download"></use>
+                            </svg>
+                        </button>
                     `
                 }
             },
         ],
-        rowSelection: 'multiple',
-        onGridReady: (params) => {
-            params.api.sizeColumnsToFit();
-            const columnsToAutoSize = ['discipline', 'type', 'year', 'author', 'download'];
-            params.columnApi.autoSizeColumns(columnsToAutoSize);
-        }
+        rowHeight: 68,
+        rowSelection: 'multiple'
     }
     return {
         init: (parentDiv) => {
