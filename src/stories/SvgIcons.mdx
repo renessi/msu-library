@@ -8,7 +8,7 @@ import { icons } from "../stories/svgIcons.js"
     .map(icon => {
       return (
         <IconItem key={icon.name} name={icon.icon}>
-          <svg>
+          <svg style={{color: 'white'}}>
             <use xlinkHref={'#' + icon.icon}></use>
           </svg>
         </IconItem>
