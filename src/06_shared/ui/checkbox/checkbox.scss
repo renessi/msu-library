@@ -38,6 +38,7 @@
     opacity: 0;
     width: 0;
     height: 0;
+    display: none;
 
   &:checked + .checkbox__span::after{
     display: block;
