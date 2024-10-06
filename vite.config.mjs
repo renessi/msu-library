@@ -38,7 +38,7 @@ const pageData = {
 
 export default defineConfig({
   root: resolve(__dirname, "src"),
-  base: process.env.NODE_ENV === "production" ? "./" : "/",
+  base: process.env.NODE_ENV === "production" ? "/msu-library/" : "/",
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
