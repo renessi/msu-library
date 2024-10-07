@@ -1,5 +1,7 @@
-<div class="filter__container">
-    <div class="filter__top">
+<div class="filters" id="filterList">
+  {{> filter-subject}} 
+  {{> filter-semester}} 
+    <!-- <div class="filter__top">
       <span class="filter__text">Предмет</span>
       <svg class="filter__img">
         <use xlink:href="#icon-chevron-up"></use>
@@ -10,8 +12,9 @@
           <li class="filter__item">{{> checkbox}} <span>Проектирование</span></li>
           <li class="filter__item">{{> checkbox}} <span>Ангем</span></li>
         </ul>
-    </div>
-    <div class="filter__top">
+    </div> -->
+
+    <!-- <div class="filter__top">
       <label class="filter__text">
         <svg class=" filter__img--search">
           <use xlink:href="#icon-search"></use>
@@ -33,7 +36,8 @@
           <li class="filter__item">{{> checkbox}} <span>9 семестр</span></li>
           <li class="filter__item">{{> checkbox}} <span>10 семестр</span></li>
         </ul>
-      </div>
+      </div> -->
+
     <!-- <div class="filter__top">
       <label class="filter__text">
         <svg class="filter__img--search">
