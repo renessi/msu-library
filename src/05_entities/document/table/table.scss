@@ -1,0 +1,130 @@
+
+.ag-theme-msu {
+  .ag-root-wrapper {
+    background: rgb(var(--clr-pale-grey));
+  }
+
+  .ag-header-viewport {
+    display: none;
+  }
+
+  .ag-header {
+    display: none;
+  }
+
+  .ag-root-wrapper {
+    background: transparent;
+  }
+
+  .ag-row {
+    color: rgb(var(--clr-white));
+    background: rgb(var(--clr-primary-black));
+    border: none;
+    border-radius: 16px;
+
+      &:hover  {
+        cursor: pointer;
+      }
+  }
+
+  .ag-row-odd {
+    background: rgb(var(--clr-primary-grey));
+  }
+
+  .ag-ltr .ag-cell {
+    font-size: 14px;
+    line-height: 68px;
+    text-align: left;
+    color: rgb(var(--clr-light-grey));
+    border: none;
+  }
+
+  .ag-ltr .ag-cell > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .ag-ltr .ag-column-first {
+    font-size: 16px;
+    line-height: 68px;
+    text-align: left;
+    color: rgb(var(--clr-white));
+  }
+
+  .ag-ltr .ag-cell-focus:not(.ag-cell-range-selected):focus-within {
+    border: none;
+    outline: none;
+  }
+
+  .ag-row-focus, .ag-row-selected {
+    background: rgb(var(--clr-selected));
+  }
+
+  .ag-row-selected::before {
+    content: none;
+  }
+
+  &__user-img {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    color: rgb(var(--clr-light-grey));
+  }
+
+  &__btn-download {
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+
+  &__download-img {
+    width: 34px;
+    height: 34px;
+    color: rgb(var(--clr-light-grey));
+  }
+
+  .ag-checkbox-input-wrapper {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    background: transparent;
+    border: 1px solid rgb(var(--clr-dark-grey));
+    border-radius: 100%;
+
+      &.ag-checked {
+        background: rgb(var(--clr-active-purple));
+      }
+  }
+
+  .ag-checkbox-input-wrapper::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    min-width: 16px;
+    height: 16px;
+  }
+
+  .ag-checkbox-input-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 10px;
+    height: 9px;
+    margin: auto;
+    background: rgb(var(--clr-dark-grey));
+    mask-image: url(@/06_shared/img/svg/tick.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .ag-checkbox-input-wrapper.ag-checked::after {
+    background: rgb(var(--clr-white));
+  }
+}
+

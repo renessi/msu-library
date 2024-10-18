@@ -16,3 +16,8 @@ const preview = {
 };
 
 export default preview;
+
+import "../src/index.scss"
+const script = document.createElement('script');
+script.src = 'https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js';
+document.head.appendChild(script);

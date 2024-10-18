@@ -4,13 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{title}}</title>
+    <script src="https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js"></script>
   </head>
   <body>
     {{> icons-import}}
     <!-- do not delete -->
 
-    {{> header}} {{> catalog}} {{> footer}}
+    {{> header}}
+    <main class="page">{{> catalog}}</main>
+    {{> footer}}
   </body>
 
-  <script type="module" src="main.js"></script>
+  <script type="module" src="main.js" defer></script>
 </html>
