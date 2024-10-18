@@ -8,9 +8,13 @@
   </head>
   <body>
     {{> icons-import}}<!-- do not delete -->
+    {{> header}}
 
-    {{> header}} {{> button}} {{> button-accent}} {{> checkbox}} {{> search}}
-    {{> filter}} {{> table}}
+    <main class="page">
+      {{> button}} {{> button-accent}} {{> checkbox}} {{> search}} {{> filter}}
+      {{> table}}
+    </main>
+    {{> footer}}
   </body>
   <script type="module" src="main.js" defer></script>
 </html>
