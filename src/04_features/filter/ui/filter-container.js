@@ -21,9 +21,10 @@ function handleFilterClick(event) {
 }
 
 function openSearch(filterNode) {
-    console.log('openSearch')
-    // filterNode.classList.toggle('--search')
+    console.log(filterNode,'openSearch')
+    filterNode.classList.toggle('--visible')
 }
+
 
 function toggleList(filterNode) {
     console.log(filterNode, 'toggleList')

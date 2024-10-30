@@ -1,0 +1,22 @@
+<div class="filter" data-filter="item">
+    <div class="filter__top">
+      <button class="filter__search" data-filter="openSearch">
+        <svg class="filter__icon">
+          <use xlink:href="#icon-search"></use>
+        </svg>
+      </button>
+      <input class="filter__input" type="text" id="searchInput">
+      <svg class="filter__img" data-filter="toggleList">
+        <use xlink:href="#icon-chevron-up"></use>
+      </svg>
+    </div>
+    <div class="filter__list">
+        <ul class="filter__menu" data-filter="toggleList">
+            <li class="filter__item">{{> checkbox}} <span>Лекция</span></li>
+            <li class="filter__item">{{> checkbox}} <span>Книга</span></li>
+            <li class="filter__item">{{> checkbox}} <span>Лабораторная</span></li>
+            <li class="filter__item">{{> checkbox}} <span>Курсовая</span></li>
+            <li class="filter__item">{{> checkbox}} <span>Другое</span></li>
+        </ul>
+    </div>
+  </div>
