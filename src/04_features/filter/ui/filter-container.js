@@ -22,13 +22,14 @@ function handleFilterClick(event) {
 
 function openSearch(filterNode) {
     console.log(filterNode,'openSearch')
-    filterNode.classList.toggle('--visible')
+    // filterNode.classList.toggle('--visible')
 }
 
 
 function toggleList(filterNode) {
     console.log(filterNode, 'toggleList')
     filterNode.classList.toggle('--open')
+    filterNode.classList.toggle('--visible')
     // down.classList.toggle('filter__img--rotate');
     // menu.classList.toggle('filter__menu--open');
 

@@ -85,6 +85,7 @@
         cursor: pointer;
     }
     &__icon{
+        display: none;
         width:20px;
         height: 20px;
     }
@@ -127,6 +128,9 @@
             display: block;
         }
         .filter__icon{
+            display: block;
+        }
+        .filter__text{
             display: none;
         }
 
