@@ -1,11 +1,9 @@
-const filterList = document.querySelector('#filterList');
 const actions = {
     openSearch: openSearch,
     toggleList: toggleList
 }
-filterList.addEventListener('click', handleFilterClick )
 
-function handleFilterClick(event) {
+export function handleFilterClick(event) {
     // debugger
     console.dir(event.target)
     const dataset = event.target.dataset
