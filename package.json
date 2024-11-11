@@ -8,10 +8,12 @@
     "lint": "eslint . && prettier --write .",
     "prepare": "husky",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "openapi-codegen": "openapi-ts"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.6.1",
+    "@hey-api/openapi-ts": "^0.55.2",
     "@storybook/addon-essentials": "^8.2.9",
     "@storybook/addon-interactions": "^8.2.9",
     "@storybook/addon-links": "^8.2.9",
@@ -35,6 +37,7 @@
     "vite-plugin-svg-sprite": "^0.5.2"
   },
   "dependencies": {
+    "@hey-api/client-fetch": "^0.4.3",
     "save-dev": "^0.0.1-security"
   },
   "lint-staged": {
