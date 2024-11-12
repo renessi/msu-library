@@ -6,7 +6,8 @@ const config = {
     "@storybook/addon-essentials",
     "@chromatic-com/storybook",
     "@storybook/addon-interactions",
-    "@storybook/addon-styling-webpack"
+    "@storybook/addon-styling-webpack",
+    "storybook-addon-multiselect"
   ],
   framework: {
     name: "@storybook/html-vite",

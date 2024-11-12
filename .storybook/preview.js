@@ -1,5 +1,6 @@
 import "@/index.scss";
 import { themes } from '@storybook/theming';
+import { withMultiselect } from 'storybook-addon-multiselect';
 
 /** @type { import('@storybook/html').Preview } */
 const preview = {
@@ -12,8 +13,27 @@ const preview = {
         date: /Date$/i,
       },
     },
+    multiselect: {
+    example: {
+      icon: '💾',
+      elements: [
+        {
+          type: 'singleSelect',
+          queryKey: 'example',
+          options: [
+            { title: 'Option 1', value: 'option1' },
+            { title: 'Option 2', value: 'option2' },
+            { title: 'Option 3', value: 'option3' }
+          ]
+        }
+      ]
+    }
+  }
   },
 };
+export const decorators = [
+  withMultiselect,
+];
 
 export default preview;
 
