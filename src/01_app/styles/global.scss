@@ -5,6 +5,11 @@ body {
     margin: 0;
     background-color: rgb(var(--clr-primary-black));
     color: rgb(var(--clr-white));
+    min-height: 100vh;
+}
+.layout {
+    display: grid;
+    grid-template-rows: auto 1fr;
 }
 
 .page {
