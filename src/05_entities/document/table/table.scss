@@ -4,6 +4,9 @@
     background: rgb(var(--clr-pale-grey));
   }
 
+  .ag-root-wrapper-body.ag-layout-normal {
+    height: initial;
+  }
   .ag-header-viewport {
     display: none;
   }

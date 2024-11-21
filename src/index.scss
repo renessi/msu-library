@@ -1,12 +1,6 @@
-@import "@/01_app/styles/variables.scss";
-@import "@/01_app/styles/extends.scss";
-@import "@/01_app/styles/global.scss";
-
-//ui
-@import "@/06_shared/ui/button/button.scss";
-@import "@/06_shared/ui/checkbox/checkbox.scss";
-@import "@/04_features/filter/ui/filter.scss";
-
-//containers
-@import "@/04_features/search/ui/search.scss";
-@import "@/03_widgets/header/header.scss";
+@import "@/01_app/index.scss"; // global styles
+@import "@/06_shared/index.scss"; // component styles
+@import "@/04_features/index.scss";
+@import "@/03_widgets/index.scss";
+@import "@/05_entities/index.scss";
+@import "@/02_pages/index.scss";

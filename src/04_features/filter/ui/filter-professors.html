@@ -1,6 +1,6 @@
 <div class="filter" data-filter="item">
     <div class="filter__top">
-      <span class="filter__text" data-filter="openSearch">Преподаватель</span>
+      <span class="filter__text" data-filter="toggleList">Преподаватель</span>
         <svg class="filter__icon">
           <use xlink:href="#icon-search"></use>
         </svg>
@@ -10,11 +10,11 @@
       </svg>
     </div>
     <div class="filter__list">
-        <ul class="filter__menu" data-filter="toggleList">
-            <li class="filter__item">{{> checkbox}}<span>Половинко А. С</span>.</li>
-            <li class="filter__item">{{> checkbox}}<span>Абдурахман И. И.</span></li>
-            <li class="filter__item">{{> checkbox}}<span>Андреев И. И</span></li>
-            <li class="filter__item">{{> checkbox}}<span>Синица А. Д.</span></li>
+        <ul class="filter__menu">
+            <li class="filter__item">{{> checkbox label='Половинко А. С.'}}</li>
+            <li class="filter__item">{{> checkbox label='Абдурахман И. И.'}}</li>
+            <li class="filter__item">{{> checkbox label='Андреев И. И.'}}</li>
+            <li class="filter__item">{{> checkbox label='Синица А. Д.'}}</li>
         </ul>
     </div>
   </div>

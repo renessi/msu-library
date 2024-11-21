@@ -1,26 +1,26 @@
 <div class="filter" data-filter="item">
   <div class="filter__top">
-    <span class="filter__text" data-filter="openSearch">Семестр</span>
-      <svg class="filter__icon" data-filter="openSearch">
-        <use xlink:href="#icon-search"></use>
-      </svg>
+    <span class="filter__text" data-filter="toggleList">Семестр</span>
+    <svg class="filter__icon" data-filter="openSearch">
+      <use xlink:href="#icon-search"></use>
+    </svg>
     <input class="filter__input" type="text" id="searchInput">
     <svg class="filter__img" data-filter="toggleList">
       <use xlink:href="#icon-chevron-up"></use>
     </svg>
   </div>
   <div class="filter__list">
-      <ul class="filter__menu" data-filter="toggleList">
-          <li class="filter__item">{{> checkbox}} <span>1 семестр</span></li>
-          <li class="filter__item">{{> checkbox}} <span>2 семестр</span></li>
-          <li class="filter__item">{{> checkbox}} <span>3 семестр</span></li>
-          <li class="filter__item">{{> checkbox}} <span>4 семестр</span></li>
-          <li class="filter__item">{{> checkbox}} <span>5 семестр</span></li>
-          <li class="filter__item">{{> checkbox}} <span>6 семестр</span></li>
-          <li class="filter__item">{{> checkbox}} <span>7 семестр</span></li>
-          <li class="filter__item">{{> checkbox}} <span>8 семестр</span></li>
-          <li class="filter__item">{{> checkbox}} <span>9 семестр</span></li>
-          <li class="filter__item">{{> checkbox}} <span>10 семестр</span></li>
+      <ul class="filter__menu">
+          <li class="filter__item">{{> checkbox label='1 семестр'}}</li>
+          <li class="filter__item">{{> checkbox label='2 семестр'}}</li>
+          <li class="filter__item">{{> checkbox label='3 семестр'}}</li>
+          <li class="filter__item">{{> checkbox label='4 семестр'}}</li>
+          <li class="filter__item">{{> checkbox label='5 семестр'}}</li>
+          <li class="filter__item">{{> checkbox label='6 семестр'}}</li>
+          <li class="filter__item">{{> checkbox label='7 семестр'}}</li>
+          <li class="filter__item">{{> checkbox label='8 семестр'}}</li>
+          <li class="filter__item">{{> checkbox label='0 семестр'}}</li>
+          <li class="filter__item">{{> checkbox label='10 семестр'}}</li>
       </ul>
   </div>
 </div>

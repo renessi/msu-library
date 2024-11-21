@@ -1,4 +1,7 @@
 .checkbox {
+  display: block;
+  width: 100%;
+  cursor: pointer;
   &__span{
     position: relative;
     display: flex;
