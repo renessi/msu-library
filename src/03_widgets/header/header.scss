@@ -1,5 +1,8 @@
 .header {
     @extend %container;
+    position: sticky;
+    top: 0;
+    background-color: rgb(var(--clr-primary-black));
     display: flex;
     gap: 45px;
     align-items: center;
