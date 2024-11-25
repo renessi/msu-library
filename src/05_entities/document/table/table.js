@@ -1,8 +1,12 @@
 import iconDownload from "@/06_shared/img/svg/download.svg";
 import {getAllDocumentsToTable} from "@/04_features/documents/documents.js"
+
+const parentNode = document.querySelector('#documentContainer')
+let  allDocuments =await getAllDocumentsToTable()
+
 const gridTable = async() => {
     try {
-        const documents = await getAllDocumentsToTable()
+        let gridApi;
         const filterParamsText =  {
             filterOptions:['contains'],
             debounceMs: 200,
@@ -15,7 +19,7 @@ const gridTable = async() => {
             maxNumConditions: 1
         }
         const gridOptions = {
-            rowData: documents,
+            rowData: allDocuments,
             columnDefs: [
                 { field: "file", flex: 4, checkboxSelection: true, filter: true, filterParams: filterParamsText
                 },
@@ -49,7 +53,10 @@ const gridTable = async() => {
         }
         return {
             init: (parentDiv) => {
-                agGrid.createGrid(parentDiv, gridOptions);
+                gridApi = agGrid.createGrid(parentDiv, gridOptions);
+            },
+            update: (data) => {
+                gridApi.setGridOption("rowData", data);
             }
         }
     } catch {
@@ -60,4 +67,24 @@ const gridTable = async() => {
     }
     
 }
-export default gridTable
+
+const gTable = await gridTable()
+
+export const documentInit = async () => {
+    
+    if(gTable.init) {
+        gTable.init(parentNode)
+    } else {
+        parentNode.innerHTML = gTable.error
+    }
+}
+
+export const documentUpdate = (data = allDocuments) => {
+    console.log(data)
+    if(gTable.update) {
+        gTable.update(data)
+    } else {
+        parentNode.innerHTML = gTable.error
+    }
+}
+

@@ -2,16 +2,15 @@
 .filter{
     cursor: pointer;
     position: relative;
-    max-width: 194px;
     box-sizing: border-box;
 
     &__menu{
         list-style: none;
         padding: 8px 0px 8px 16px;
+        box-sizing: border-box;
         background: rgb(var(--clr-secondary-grey));
         border-radius: 0 0 10px 10px;
-        width: 100%;
-        max-width: 178px;
+        width: 100%;    
         // height: 147px;
         overflow-y: scroll;
         transform: translateY(-50%);

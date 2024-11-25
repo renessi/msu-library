@@ -1,10 +1,5 @@
-<div id="gridWrapper" class="ag-theme-msu"></div>
+<div id="documentContainer" class="ag-theme-msu"></div>
 <script type="module">
-    import gridTable from '@/05_entities/document/table/table.js'
-    const gTable = await gridTable()
-    if(gTable.init) {
-        gTable.init(gridWrapper)
-    } else {
-        gridWrapper.innerHTML = gTable.error
-    }
+    import { documentInit } from '@/05_entities/document/table/table.js'
+    await documentInit()
 </script>
