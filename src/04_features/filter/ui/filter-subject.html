@@ -10,11 +10,11 @@
     </svg>
   </div>
   <div class="filter__list">
-      <ul class="filter__menu">
-        <li class="filter__item">{{> checkbox label='Анализ данных'}}</li>
-        <li class="filter__item">{{> checkbox label='УМФ'}}</li>
-        <li class="filter__item">{{> checkbox label='Проектирование'}}</li>
-        <li class="filter__item">{{> checkbox label='Ангем'}}</li>
+      <ul class="filter__menu" data-filter="list">
+        <li class="filter__item" data-filter-value="анализ данных">{{> checkbox label='Анализ данных'}}</li>
+        <li class="filter__item" data-filter-value="уфм">{{> checkbox label='УМФ'}}</li>
+        <li class="filter__item" data-filter-value="проектирование">{{> checkbox label='Проектирование'}}</li>
+        <li class="filter__item" data-filter-value="ангем">{{> checkbox label='Ангем'}}</li>
       </ul>
   </div>
 </div>

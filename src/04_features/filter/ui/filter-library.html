@@ -4,18 +4,18 @@
         <svg class="filter__icon">
           <use xlink:href="#icon-search"></use>
         </svg>
-      <input class="filter__input" type="text" id="searchInput">
+      <input class="filter__input" type="text" data-filter="searchInput">
       <svg class="filter__img" data-filter="toggleList">
         <use xlink:href="#icon-chevron-up"></use>
       </svg>
     </div>
     <div class="filter__list">
-        <ul class="filter__menu">
-            <li class="filter__item">{{> checkbox label='Лекция'}}</li>
-            <li class="filter__item">{{> checkbox label='Книга'}}</li>
-            <li class="filter__item">{{> checkbox label='Лабораторная'}}</li>
-            <li class="filter__item">{{> checkbox label='Курсовая'}}</li>
-            <li class="filter__item">{{> checkbox label='Другое'}}</li>
+        <ul class="filter__menu" data-filter="list">
+            <li class="filter__item" data-filter-value="лекция">{{> checkbox label='Лекция'}}</li>
+            <li class="filter__item" data-filter-value="книга">{{> checkbox label='Книга'}}</li>
+            <li class="filter__item" data-filter-value="лабораторная">{{> checkbox label='Лабораторная'}}</li>
+            <li class="filter__item" data-filter-value="курсовая">{{> checkbox label='Курсовая'}}</li>
+            <li class="filter__item" data-filter-value="другое">{{> checkbox label='Другое'}}</li>
         </ul>
     </div>
   </div>

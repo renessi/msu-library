@@ -39,6 +39,9 @@
         gap: 3px;
         padding: 8px 4px 4px;
         border-radius: 0.5em;
+        &.--hidden {
+            display: none;
+        }
     }
     &__item span{
         font-size: var(--fs-small);
