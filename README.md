@@ -1,20 +1,9 @@
 # MSU knowledge library
 
----
-
-Frontend Team:<br>
-[Владислав Миронов](https://github.com/vladmir26)<br>
-[Евгения Макеева](https://github.com/EvaM25)<br>
-[Екатерина Смирнова](https://github.com/catherinsmi)<br>
-[Кристина Новикова](https://github.com/nookismile)<br>
-[Марина Моисеенко](https://github.com/marrollyn)<br>
-[Мария Белогубова](https://github.com/mariiabel)
-
----
 
 Project details:
 
-[GitHub Page](https://mariiabel.github.io/msu-library/)<br>
+[GitHub Page](https://mariiabel.github.io/msu-library/dist/)<br>
 [Figma design](https://www.figma.com/design/SNHlX8dZEVNcOhyMzh9Asf/DMVN-TZ?node-id=0-1&t=U0Sg0IhMcvOlFqSs-0) <br>
 [Discussions](https://github.com/MariiaBel/msu-library/discussions)<br>
 [Wiki](https://github.com/MariiaBel/msu-library/wiki/Instractions)<br>
@@ -59,3 +48,16 @@ How we work with the repositories. Rules to follow:
 - Code review is required before pushing to the main branch. Everyone on the team can review code
 
 - [Video how to work with project](https://drive.google.com/file/d/1srBw3dUKgCt_Z2iNkQ1-uGUTjkZUa-hQ/view?usp=sharing)
+
+
+---
+
+Frontend Team:<br>
+[Владислав Миронов](https://github.com/vladmir26)<br>
+[Евгения Макеева](https://github.com/EvaM25)<br>
+[Екатерина Смирнова](https://github.com/catherinsmi)<br>
+[Кристина Новикова](https://github.com/nookismile)<br>
+[Марина Моисеенко](https://github.com/marrollyn)<br>
+[Мария Белогубова](https://github.com/mariiabel)
+
+---
