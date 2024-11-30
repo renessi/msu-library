@@ -1,5 +1,7 @@
 import { documentUpdate } from '@/05_entities/document/table/table.js'
-import { getSearchedDocumentsToTable } from '@/04_features/documents/documents.js';
+// import { getSearchedDocumentsToTable } from '@/04_features/documents/documents.js';
+import { getAllDocumentsToTable } from '@/04_features/documents/documents.js';
+import store from '@/01_app/Store.js';
 
 const actions = {
     toggleList: toggleList,
@@ -8,22 +10,21 @@ const actions = {
 }
 
 export function handleFilterClick(event) {
-    
+    event.stopPropagation()
     const datasetFilter = event.target.dataset.filter || event.target.closest('[data-filter]').dataset.filter
-    const dataFilterValue = event.target.dataset.filterValue || event.target.closest('[data-filter]').dataset.filterValue
-    
+
     const filterContainerNode = event.target.closest('[data-filter="item"]')
     
+    console.log(event.target)
     console.log(datasetFilter)
+    console.log(actions[datasetFilter])
 
-    // console.log(event.target, closestTargetDataset)
     if(datasetFilter && actions[datasetFilter]) {
-        actions[datasetFilter].call(null, filterContainerNode, dataFilterValue)
+        if(event.target.getAttribute('type') !== 'checkbox') { // prevent double clickEvent on checkbox component
+            const dataFilterValue = event.target.dataset.filterValue || event.target.closest('[data-filter]').dataset.filterValue
+            actions[datasetFilter].call(null, filterContainerNode, dataFilterValue)
+        }
     } 
-    // else if(closestTargetDataset.filter && actions[closestTargetDataset.filter]) {
-    //     console.log(111111111,closestTargetDataset )
-    //     actions[closestTargetDataset.filter].call(null, filterNode)
-    // }
 }
 
 function handleInputSearch(input, filterNode) {
@@ -63,7 +64,10 @@ function hiddenListItems(listItemsNode, value) {
 async function checkItem(filterContainerNode, dataFilterValue) {
     const filterGroupValue = filterContainerNode.dataset.filterGroup
     console.log(filterGroupValue, dataFilterValue, 2222222)
-    const docResponse = await getSearchedDocumentsToTable({[filterGroupValue]: dataFilterValue})
+
+    store.toggleFilterValue(filterGroupValue, dataFilterValue)
+    const docResponse = await getAllDocumentsToTable()
+
     await documentUpdate(docResponse)
 }
 
