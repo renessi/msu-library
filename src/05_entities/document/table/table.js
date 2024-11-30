@@ -80,7 +80,6 @@ export const documentInit = async () => {
 }
 
 export const documentUpdate = (data = allDocuments) => {
-    console.log(data)
     if(gTable.update) {
         gTable.update(data)
     } else {

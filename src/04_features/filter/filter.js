@@ -15,9 +15,9 @@ export function handleFilterClick(event) {
 
     const filterContainerNode = event.target.closest('[data-filter="item"]')
     
-    console.log(event.target)
-    console.log(datasetFilter)
-    console.log(actions[datasetFilter])
+    // console.log(event.target)
+    // console.log(datasetFilter)
+    // console.log(actions[datasetFilter])
 
     if(datasetFilter && actions[datasetFilter]) {
         if(event.target.getAttribute('type') !== 'checkbox') { // prevent double clickEvent on checkbox component
@@ -28,13 +28,8 @@ export function handleFilterClick(event) {
 }
 
 function handleInputSearch(input, filterNode) {
-    // const target = e.target
-    // console.log(target,filterNode)
-    // const filterContainerNode = target.closest('[data-filter="item"]')
-    // const filterListNode = filterContainerNode.querySelector('[data-filter="list"]')
     const filterListItemsNode = filterNode.querySelectorAll('[data-filter-value]')
     const inputValue = input.value.trim().toLowerCase()
-    console.log(inputValue);
     visibleListItems(filterListItemsNode)
     if(inputValue) hiddenListItems(filterListItemsNode, inputValue)
 }
@@ -50,7 +45,6 @@ function searchInput(filterNode) {
 
 function visibleListItems(listItemsNode) {
     listItemsNode.forEach((itemNode) => {
-        console.log(itemNode);
         itemNode.classList.remove('--hidden')
     })
 }
@@ -63,7 +57,6 @@ function hiddenListItems(listItemsNode, value) {
 
 async function checkItem(filterContainerNode, dataFilterValue) {
     const filterGroupValue = filterContainerNode.dataset.filterGroup
-    console.log(filterGroupValue, dataFilterValue, 2222222)
 
     store.toggleFilterValue(filterGroupValue, dataFilterValue)
     const docResponse = await getAllDocumentsToTable()

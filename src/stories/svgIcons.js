@@ -8,9 +8,6 @@ import IconSearch from '../06_shared/img/svg/search.svg';
 import IconUp from '../06_shared/img/svg/chevron-up.svg';
 import IconDown from '../06_shared/img/svg/chevron-down.svg';
 
-// import('../06_shared/img/svg/user.svg').then((item) => {
-//      console.log(item)
-// })
 export const icons = [
      {name: "User", icon: iconUser },
      {name: "Download", icon: iconDownload},
