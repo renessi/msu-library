@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>МГУ база знаний</title>
+    <script src="https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js"></script>
+    <script type="module" crossorigin src="./assets/main-C_DFApaY.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/main-BAoNJIgb.css">
+  </head>
+  <body>
+<!-- do not delete -->
+
+    <header class="header">
+  <div class="header__logo">
+    <svg class="header__logo-img" aria-label="logo">
+      <use href="#icon-logo"></use>
+    </svg>
+    <!-- <img class="header__logo-img" src="../../06_shared/img/svg/logo.svg" alt="logo" /> -->
+  </div>
+  <search class="search">
+  <form class="search__form" id="documentSearch">
+    <input
+      id="documentSearchInput"
+      class="search__input"
+      type="search"
+      name="search"
+      placeholder="Поиск по материалам"
+    />
+    <button class="search__round">
+      <svg class="search__icon">
+        <use href="#icon-arrow-right"></use>
+      </svg>
+    </button>
+  </form>
+</search>
+ <button type="button" class="btn" tabindex="0">Скачать все</button>
+ <button type="button" class="btn btn--accent" tabindex="0">Добавить материал</button>
+  <button class="header__login">
+    <svg class="header__icon" aria-label="user">
+      <use href="#icon-user"></use>
+    </svg>
+  </button>
+</header>
+ <button type="button" class="btn" tabindex="0">Скачать все</button>
+ <button type="button" class="btn btn--accent" tabindex="0">Добавить материал</button> <label class="checkbox checkbox--accent">
+    <input class="checkbox__input" type="checkbox"> 
+    <span class="checkbox__span"></span>
+</label>   <search class="search">
+  <form class="search__form" id="documentSearch">
+    <input
+      id="documentSearchInput"
+      class="search__input"
+      type="search"
+      name="search"
+      placeholder="Поиск по материалам"
+    />
+    <button class="search__round">
+      <svg class="search__icon">
+        <use href="#icon-arrow-right"></use>
+      </svg>
+    </button>
+  </form>
+</search>
+
+    <div class="sidebar" id="sidebar">
+      <div class="filter" data-filter="item" data-filter-group="subject">
+        <div class="filter__top" data-filter="toggleList">
+          <span class="filter__text">Предмет</span>
+          <svg class="filter__icon">
+            <use xlink:href="#icon-search"></use>
+          </svg>
+          <input class="filter__input" type="text" data-filter="searchInput">
+          <svg class="filter__img">
+            <use xlink:href="#icon-chevron-up"></use>
+          </svg>
+        </div>
+        <div class="filter__list">
+            <ul class="filter__menu">
+              <li class="filter__item" data-filter-value="анализ данных" data-filter="checkItem"><label class="checkbox checkbox--accent">
+          <input class="checkbox__input" type="checkbox"> 
+          <span class="checkbox__span">Анализ данных</span>
+      </label>  </li>
+              <li class="filter__item" data-filter-value="уфм" data-filter="checkItem"><label class="checkbox checkbox--accent">
+          <input class="checkbox__input" type="checkbox"> 
+          <span class="checkbox__span">УМФ</span>
+      </label>  </li>
+              <li class="filter__item" data-filter-value="проектирование" data-filter="checkItem"><label class="checkbox checkbox--accent">
+          <input class="checkbox__input" type="checkbox"> 
+          <span class="checkbox__span">Проектирование</span>
+      </label>  </li>
+              <li class="filter__item" data-filter-value="ангем" data-filter="checkItem"><label class="checkbox checkbox--accent">
+          <input class="checkbox__input" type="checkbox"> 
+          <span class="checkbox__span">Ангем</span>
+      </label>  </li>
+            </ul>
+        </div>
+      </div>
+      <div class="filter" data-filter="item" data-filter-group="semester">
+        <div class="filter__top"  data-filter="toggleList">
+          <span class="filter__text">Семестр</span>
+          <svg class="filter__icon" data-filter="openSearch">
+            <use xlink:href="#icon-search"></use>
+          </svg>
+          <input class="filter__input" type="text" data-filter="searchInput">
+          <svg class="filter__img">
+            <use xlink:href="#icon-chevron-up"></use>
+          </svg>
+        </div>
+        <div class="filter__list">
+            <ul class="filter__menu">
+                <li class="filter__item" data-filter-value="1" data-filter="checkItem"><label class="checkbox checkbox--accent">
+          <input class="checkbox__input" type="checkbox"> 
+          <span class="checkbox__span">1 семестр</span>
+      </label>  </li>
+                <li class="filter__item" data-filter-value="2" data-filter="checkItem"><label class="checkbox checkbox--accent">
+          <input class="checkbox__input" type="checkbox"> 
+          <span class="checkbox__span">2 семестр</span>
+      </label>  </li>
+                <li class="filter__item" data-filter-value="3" data-filter="checkItem"><label class="checkbox checkbox--accent">
+          <input class="checkbox__input" type="checkbox"> 
+          <span class="checkbox__span">3 семестр</span>
+      </label>  </li>
+                <li class="filter__item" data-filter-value="4" data-filter="checkItem"><label class="checkbox checkbox--accent">
+          <input class="checkbox__input" type="checkbox"> 
+          <span class="checkbox__span">4 семестр</span>
+      </label>  </li>
+                <li class="filter__item" data-filter-value="5" data-filter="checkItem"><label class="checkbox checkbox--accent">
+          <input class="checkbox__input" type="checkbox"> 
+          <span class="checkbox__span">5 семестр</span>
+      </label>  </li>
+                <li class="filter__item" data-filter-value="6" data-filter="checkItem"><label class="checkbox checkbox--accent">
+          <input class="checkbox__input" type="checkbox"> 
+          <span class="checkbox__span">6 семестр</span>
+      </label>  </li>
+                <li class="filter__item" data-filter-value="7" data-filter="checkItem"><label class="checkbox checkbox--accent">
+          <input class="checkbox__input" type="checkbox"> 
+          <span class="checkbox__span">7 семестр</span>
+      </label>  </li>
+                <li class="filter__item" data-filter-value="8" data-filter="checkItem"><label class="checkbox checkbox--accent">
+          <input class="checkbox__input" type="checkbox"> 
+          <span class="checkbox__span">8 семестр</span>
+      </label>  </li>
+                <li class="filter__item" data-filter-value="9" data-filter="checkItem"><label class="checkbox checkbox--accent">
+          <input class="checkbox__input" type="checkbox"> 
+          <span class="checkbox__span">9 семестр</span>
+      </label>  </li>
+                <li class="filter__item" data-filter-value="10" data-filter="checkItem"><label class="checkbox checkbox--accent">
+          <input class="checkbox__input" type="checkbox"> 
+          <span class="checkbox__span">10 семестр</span>
+      </label>  </li>
+            </ul>
+        </div>
+      </div>
+      <div class="filter" data-filter="item" data-filter-group="teacher">
+          <div class="filter__top" data-filter="toggleList">
+            <span class="filter__text">Преподаватель</span>
+              <svg class="filter__icon">
+                <use xlink:href="#icon-search"></use>
+              </svg>
+            <input class="filter__input" type="text" data-filter="searchInput">
+            <svg class="filter__img">
+              <use xlink:href="#icon-chevron-up"></use>
+            </svg>
+          </div>
+          <div class="filter__list">
+              <ul class="filter__menu" >
+                  <li class="filter__item" data-filter-value="половинко а. с." data-filter="checkItem"><label class="checkbox checkbox--accent">
+          <input class="checkbox__input" type="checkbox"> 
+          <span class="checkbox__span">Половинко А. С.</span>
+      </label>  </li>
+                  <li class="filter__item" data-filter-value="абдурахман и. и." data-filter="checkItem"><label class="checkbox checkbox--accent">
+          <input class="checkbox__input" type="checkbox"> 
+          <span class="checkbox__span">Абдурахман И. И.</span>
+      </label>  </li>
+                  <li class="filter__item" data-filter-value="андреев и. и." data-filter="checkItem"><label class="checkbox checkbox--accent">
+          <input class="checkbox__input" type="checkbox"> 
+          <span class="checkbox__span">Андреев И. И.</span>
+      </label>  </li>
+                  <li class="filter__item" data-filter-value="синица а. д." data-filter="checkItem"><label class="checkbox checkbox--accent">
+          <input class="checkbox__input" type="checkbox"> 
+          <span class="checkbox__span">Синица А. Д.</span>
+      </label>  </li>
+              </ul>
+          </div>
+        </div>  <div class="filter" data-filter="item" data-filter-group="category">
+          <div class="filter__top" data-filter="toggleList">
+            <span class="filter__text">Библиотека</span>
+              <svg class="filter__icon">
+                <use xlink:href="#icon-search"></use>
+              </svg>
+            <input class="filter__input" type="text" data-filter="searchInput">
+            <svg class="filter__img">
+              <use xlink:href="#icon-chevron-up"></use>
+            </svg>
+          </div>
+          <div class="filter__list">
+              <ul class="filter__menu">
+                  <li class="filter__item" data-filter-value="лекция" data-filter="checkItem"><label class="checkbox checkbox--accent">
+          <input class="checkbox__input" type="checkbox"> 
+          <span class="checkbox__span">Лекция</span>
+      </label>  </li>
+                  <li class="filter__item" data-filter-value="книга" data-filter="checkItem"><label class="checkbox checkbox--accent">
+          <input class="checkbox__input" type="checkbox"> 
+          <span class="checkbox__span">Книга</span>
+      </label>  </li>
+                  <li class="filter__item" data-filter-value="лабораторная" data-filter="checkItem"><label class="checkbox checkbox--accent">
+          <input class="checkbox__input" type="checkbox"> 
+          <span class="checkbox__span">Лабораторная</span>
+      </label>  </li>
+                  <li class="filter__item" data-filter-value="курсовая" data-filter="checkItem"><label class="checkbox checkbox--accent">
+          <input class="checkbox__input" type="checkbox"> 
+          <span class="checkbox__span">Курсовая</span>
+      </label>  </li>
+                  <li class="filter__item" data-filter-value="другое" data-filter="checkItem"><label class="checkbox checkbox--accent">
+          <input class="checkbox__input" type="checkbox"> 
+          <span class="checkbox__span">Другое</span>
+      </label>  </li>
+              </ul>
+          </div>
+        </div></div>
+          </body>
+</html>

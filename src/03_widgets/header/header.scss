@@ -2,6 +2,7 @@
     @extend %container;
     position: sticky;
     top: 0;
+    z-index: 1;
     background-color: rgb(var(--clr-primary-black));
     display: flex;
     gap: 45px;
@@ -12,6 +13,7 @@
     
     &__logo {
         width: 178px;
+        flex-shrink: 0;
         &-img {
             margin-bottom: -30px;
         }

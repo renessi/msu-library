@@ -38,7 +38,7 @@ const pageData = {
 
 export default defineConfig({
   root: resolve(__dirname, "src"),
-  base: process.env.NODE_ENV === "production" ? "/msu-library/" : "/",
+  base: process.env.NODE_ENV === "production" ? "./" : "/",
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
@@ -47,6 +47,7 @@ export default defineConfig({
   build: {
     outDir: resolve(__dirname, "dist"),
     emptyOutDir: true,
+    target: "ES2022",
     rollupOptions: {
       input: {
         index: resolve(__dirname, "src/index.html"),

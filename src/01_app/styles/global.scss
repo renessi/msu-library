@@ -25,3 +25,7 @@ svg {
 :focus-visible {
     outline: 1px solid rgb(var(--clr-white));
 }
+
+ul, ol, dl {
+    margin: 0;
+}
