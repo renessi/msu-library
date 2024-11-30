@@ -3,7 +3,7 @@
 
 Project details:
 
-[GitHub Page](https://mariiabel.github.io/msu-library/dist/)<br>
+[GitHub Page](https://mariiabel.github.io/msu-library/dist/catalog.html)<br>
 [Figma design](https://www.figma.com/design/SNHlX8dZEVNcOhyMzh9Asf/DMVN-TZ?node-id=0-1&t=U0Sg0IhMcvOlFqSs-0) <br>
 [Discussions](https://github.com/MariiaBel/msu-library/discussions)<br>
 [Wiki](https://github.com/MariiaBel/msu-library/wiki/Instractions)<br>
