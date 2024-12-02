@@ -53,14 +53,20 @@ export const getAllDocumentsToTable = async() => {
  * @returns { Array<Document> } Documents for catalog table {@link Document}
  */
 
- export const getSearchedDocumentsToTable = async(query) => {
-    console.log(query)
+ export const getSearchedDocumentsToTable = async() => {
+    console.log(store.search)
     // хапись и чтение с localStore
-    const filterQuery = {}
+    const filterQuery = {
+        subjectArray: store.subject.size ? store.getFilterArrByKey('subject').join(',') : '',
+        semesterArray: store.semester.size ? store.getFilterArrByKey('semester').join(',') : '',
+        teacherArray: store.teacher.size ? store.getFilterArrByKey('teacher').join(',') : '',
+        subjectTypeArray: store.category.size ? store.getFilterArrByKey('category').join(',') : '',
+    }
+    
     const { data } = await searchDocumentSearchGet({
         client:msuClient, 
         query: {
-            prompt: query.prompt || '',
+            prompt: store.search,
             ...filterQuery
         }
 

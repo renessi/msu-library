@@ -1,6 +1,6 @@
 import { documentUpdate } from '@/05_entities/document/table/table.js'
-// import { getSearchedDocumentsToTable } from '@/04_features/documents/documents.js';
-import { getAllDocumentsToTable } from '@/04_features/documents/documents.js';
+import { getSearchedDocumentsToTable } from '@/04_features/documents/documents.js';
+// import { getAllDocumentsToTable } from '@/04_features/documents/documents.js';
 import store from '@/01_app/Store.js';
 
 const actions = {
@@ -59,7 +59,7 @@ async function checkItem(filterContainerNode, dataFilterValue) {
     const filterGroupValue = filterContainerNode.dataset.filterGroup
 
     store.toggleFilterValue(filterGroupValue, dataFilterValue)
-    const docResponse = await getAllDocumentsToTable()
+    const docResponse = await getSearchedDocumentsToTable()
 
     await documentUpdate(docResponse)
 }

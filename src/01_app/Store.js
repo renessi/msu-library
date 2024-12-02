@@ -4,6 +4,7 @@ class Store {
     semester
     teacher
     category
+    search
 
     constructor() {
         if (Store._instance) {
@@ -13,6 +14,7 @@ class Store {
         this.semester = new Set()
         this.teacher = new Set()
         this.category = new Set()
+        this.search = ''
         Store._instance = this;
     }
 
@@ -36,7 +38,9 @@ class Store {
         }
     }
 
-    
+    setSearchValue(value) {
+        this.search = value
+    }
 
 }
 
