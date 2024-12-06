@@ -1,5 +1,5 @@
 import { msuClient } from "@/01_app/api/client.js"
-import { getAllDocumentsResourcesGet, searchDocumentSearchGet } from "@/01_app/api/client/services.gen"
+import { getAllDocumentsResourcesGet, searchDocumentSearchGet, downloadFileFromS3GetFileLinkGet } from "@/01_app/api/client/services.gen"
 import store from "@/01_app/Store.js"
 
 // we need this type for document table 
@@ -34,15 +34,16 @@ export const getAllDocumentsToTable = async() => {
             ...filterQuery
         }
     })
-    // console.log(data)
+    console.log(data)
     const mappedData = data.map((document) => ({
         file: document.name, 
         discipline: document.subject_name, 
         type: document.category_name, 
         year: document.year, 
         author: document.teacher_name, 
-        download: document.is_file
-        // download: `logic for download pdf`
+        is_file: document.is_file,
+        document_id: document.document_id,
+        link: document.link
     }))
     
     return mappedData
@@ -78,9 +79,29 @@ export const getAllDocumentsToTable = async() => {
         type: document.category_name, 
         year: document.year, 
         author: document.teacher_name, 
-        download: document.is_file
-        // download: `logic for download pdf`
+        is_file: document.is_file,
+        document_id: document.document_id,
+        link: document.link
     }))
     
     return mappedData
+}
+
+export const getFileByLink = async(link) => {
+    const { data } = await downloadFileFromS3GetFileLinkGet({
+        client:msuClient, 
+        query: {
+            link: link
+        }
+    })
+    console.log(data)
+}
+
+export const downloadFileByURL = (fileURL) => {
+    fileURL = 'https://drive.usercontent.google.com/u/0/uc?id=1YTaw5djftG3fysp5TaCrltKssfuGQ37-&export=download'
+    const downloadLink = document.createElement('a');
+    downloadLink.href = fileURL;
+    downloadLink.download = fileURL.split('/').pop();
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
 }

@@ -4,6 +4,7 @@ import {
   createClient,
   createConfig,
   type Options,
+  formDataBodySerializer,
 } from "@hey-api/client-fetch";
 import type {
   HealthcheckHealthGetError,
@@ -11,6 +12,9 @@ import type {
   AddMaterialPageResourcePostData,
   AddMaterialPageResourcePostError,
   AddMaterialPageResourcePostResponse,
+  AddFileS3FilePostData,
+  AddFileS3FilePostError,
+  AddFileS3FilePostResponse,
   GetAllDocumentsResourcesGetData,
   GetAllDocumentsResourcesGetError,
   GetAllDocumentsResourcesGetResponse,
@@ -20,6 +24,9 @@ import type {
   GetDocumentByIdResourceIdGetData,
   GetDocumentByIdResourceIdGetError,
   GetDocumentByIdResourceIdGetResponse,
+  DownloadFileFromS3GetFileLinkGetData,
+  DownloadFileFromS3GetFileLinkGetError,
+  DownloadFileFromS3GetFileLinkGetResponse,
 } from "./types.gen";
 
 export const client = createClient(createConfig());
@@ -56,6 +63,27 @@ export const addMaterialPageResourcePost = <
   >({
     ...options,
     url: "/resource",
+  });
+};
+
+/**
+ * Add File S3
+ */
+export const addFileS3FilePost = <ThrowOnError extends boolean = false>(
+  options: Options<AddFileS3FilePostData, ThrowOnError>,
+) => {
+  return (options?.client ?? client).post<
+    AddFileS3FilePostResponse,
+    AddFileS3FilePostError,
+    ThrowOnError
+  >({
+    ...options,
+    ...formDataBodySerializer,
+    headers: {
+      "Content-Type": null,
+      ...options?.headers,
+    },
+    url: "/file",
   });
 };
 
@@ -108,5 +136,23 @@ export const getDocumentByIdResourceIdGet = <
   >({
     ...options,
     url: "/resource/{id}",
+  });
+};
+
+/**
+ * Download File From S3
+ */
+export const downloadFileFromS3GetFileLinkGet = <
+  ThrowOnError extends boolean = false,
+>(
+  options: Options<DownloadFileFromS3GetFileLinkGetData, ThrowOnError>,
+) => {
+  return (options?.client ?? client).get<
+    DownloadFileFromS3GetFileLinkGetResponse,
+    DownloadFileFromS3GetFileLinkGetError,
+    ThrowOnError
+  >({
+    ...options,
+    url: "/get-file/{link}",
   });
 };
