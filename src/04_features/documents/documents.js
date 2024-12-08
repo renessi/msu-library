@@ -1,5 +1,5 @@
 import { msuClient } from "@/01_app/api/client.js"
-import { getAllDocumentsResourcesGet, searchDocumentSearchGet } from "@/01_app/api/client/services.gen"
+import { getAllDocumentsResourcesGet, searchDocumentSearchGet, addMaterialPageResourcePost } from "@/01_app/api/client/services.gen"
 import store from "@/01_app/Store.js"
 
 // we need this type for document table 
@@ -83,4 +83,28 @@ export const getAllDocumentsToTable = async() => {
     }))
     
     return mappedData
+}
+
+
+/**
+ * @param {string} searchValue for prompt
+ * @returns { Array<Document> } Documents for catalog table {@link Document}
+ */
+
+export const addMaterialPageResource = async(name, year, link, is_file, teacher,subject,category,semester_num) => {
+    
+    const { data } = await addMaterialPageResourcePost({
+        client:msuClient, 
+        body: {
+            name: name,
+            year: year,
+            link: link,
+            is_file: is_file,
+            teacher: teacher,
+            subject: subject,
+            category: category,
+            semester_num: semester_num,
+        }
+    })
+    console.log(data)
 }
