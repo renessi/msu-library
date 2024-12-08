@@ -3,6 +3,7 @@
   box-sizing: border-box;
   max-width: 200px;
   padding: 4px 8px;
+  white-space: nowrap;
   font-size: var(--fs-base);
   line-height: var(--lh-base);
   color: rgb(var(--clr-pale-grey));
@@ -37,6 +38,13 @@
     &:active {
       background: rgb(var(--clr-gr-blue));
       border: none;
+    }
+  }
+  &--disabled {
+    opacity: 0.5;
+    &:hover,
+    &:focus {
+      background: linear-gradient(146deg, rgb(var(--clr-gr-blue)) -31%, rgb(var(--clr-gr-purple)) 100%);
     }
   }
 }

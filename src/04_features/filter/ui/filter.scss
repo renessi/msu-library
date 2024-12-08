@@ -94,13 +94,14 @@
     &__img{
         width:14px;
         height: 14px;
+        transform: rotate(180deg);
         transition: color 0.3s ease-in-out;
         
-    &--search{
-        width: 20px;
-        height: 20px;
-        cursor: pointer;
-    }
+        &--search{
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
     } 
     &__img:focus{
         color: rgb(var(--clr-focus-purple));
@@ -145,7 +146,7 @@
             box-shadow: 0 0 1px rgb(var(--clr-selected));
         }
         .filter__img {
-            transform: rotate(180deg);
+            transform: rotate(0);
         }
         .filter__list {
             height: initial;
