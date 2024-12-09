@@ -1,10 +1,9 @@
-// import iconDownload from "@/06_shared/img/svg/download.svg";
-import {getAllDocumentsToTable, getFileByLink, downloadFileByURL} from "@/04_features/documents/documents.js"
+import {getAllDocumentsToTable, getFileByLink} from "@/04_features/documents/documents.js"
 import { authorsShortName } from '@/06_shared/utils/authors';
 
 const parentNode = document.querySelector('#documentContainer')
 let  allDocuments =await getAllDocumentsToTable()
-console.log(allDocuments)
+
 const gridTable = async() => {
 
     try {
@@ -52,31 +51,21 @@ const gridTable = async() => {
                 // },
             ],
             rowHeight: 68,
-            rowSelection: 'multiple',
+            // rowSelection: 'multiple',
             onRowClicked: async(event) => {
                 const data = event.data
                 if(data.is_file) {
-                    // await getFileByLink(data.link)
                     console.info('Document can be downloaded')
-                    downloadFileByURL(data.link)
+                    await getFileByLink('1/README.md')
+                    // await getFileByLink(data.link)
                 } else {
                     console.info('Document cannot be downloaded')
                     window.open(data.link, '_blank').focus();
                 }
-                console.log(data)
             }
-            // init(params) {
-            //     console.log(params)
-            //     // const selectionChangedCallback = () => {
-            //     //     console.log('node selected = ' + params.node.isSelected());
-            //     // };
-
-            //     // params.node.addEventListener('rowSelected', selectionChangedCallback);
-            // }
         }
         return {
             init: (parentDiv) => {
-                // console.log(parentDiv)
                 gridApi = agGrid.createGrid(parentDiv, gridOptions);
             },
             update: (data) => {

@@ -27,14 +27,12 @@ export const getAllDocumentsToTable = async() => {
         teacherArray: store.teacher.size ? store.getFilterArrByKey('teacher').join(',') : '',
         subjectTypeArray: store.category.size ? store.getFilterArrByKey('category').join(',') : '',
     }
-    console.info(filterQuery)
     const { data } = await getAllDocumentsResourcesGet({
         client:msuClient,
         query: {
             ...filterQuery
         }
     })
-    console.log(data)
     const mappedData = data.map((document) => ({
         file: document.name, 
         discipline: document.subject_name, 
@@ -55,8 +53,6 @@ export const getAllDocumentsToTable = async() => {
  */
 
  export const getSearchedDocumentsToTable = async() => {
-    console.log(store.search)
-    // хапись и чтение с localStore
     const filterQuery = {
         subjectArray: store.subject.size ? store.getFilterArrByKey('subject').join(',') : '',
         semesterArray: store.semester.size ? store.getFilterArrByKey('semester').join(',') : '',
@@ -72,7 +68,6 @@ export const getAllDocumentsToTable = async() => {
         }
 
     })
-    console.log(data)
     const mappedData = data.map((document) => ({
         file: document.name, 
         discipline: document.subject_name, 
@@ -90,18 +85,47 @@ export const getAllDocumentsToTable = async() => {
 export const getFileByLink = async(link) => {
     const { data } = await downloadFileFromS3GetFileLinkGet({
         client:msuClient, 
-        query: {
+        path: {
             link: link
         }
     })
-    console.log(data)
+    downloadBlob(data, link)
 }
 
-export const downloadFileByURL = (fileURL) => {
-    fileURL = 'https://drive.usercontent.google.com/u/0/uc?id=1YTaw5djftG3fysp5TaCrltKssfuGQ37-&export=download'
+const downloadFileByURL = (fileURL) => {
     const downloadLink = document.createElement('a');
     downloadLink.href = fileURL;
     downloadLink.download = fileURL.split('/').pop();
     document.body.appendChild(downloadLink);
     downloadLink.click();
+}
+
+function downloadBlob(blob, name = 'document.pdf') {
+    if (
+      window.navigator && 
+      window.navigator.msSaveOrOpenBlob
+    ) return window.navigator.msSaveOrOpenBlob(blob);
+
+    // For other browsers:
+    // Create a link pointing to the ObjectURL containing the blob.
+    const data = window.URL.createObjectURL(blob);
+
+    const link = document.createElement('a');
+    link.href = data;
+    link.download = name;
+
+    // this is necessary as link.click() does not work on the latest firefox
+    link.dispatchEvent(
+      new MouseEvent('click', { 
+        bubbles: true, 
+        cancelable: true, 
+        view: window 
+      })
+    );
+
+    setTimeout(() => {
+      // For Firefox it is necessary to delay revoking the ObjectURL
+      window.URL.revokeObjectURL(data);
+      link.remove();
+    }, 100);
 }
