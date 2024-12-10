@@ -11,8 +11,28 @@
     padding-top: 40px;
     padding-bottom: 50px;
     
+    @media (max-width: 769px) {
+        gap: 20px;
+        display: grid;
+        grid-template-columns: min-content 1fr 50px;
+    }
+
+    &__search {
+        @media (max-width: 769px) {
+            order:1;
+            grid-column: 1/-1;
+            max-width: initial;
+            width: 100%;
+        }
+    }
+    &__btn {
+        @media (max-width: 769px) {
+            margin-left: auto;
+        }
+    }
+
     &__logo {
-        width: 178px;
+        width: 185px;
         flex-shrink: 0;
         &-img {
             margin-bottom: -30px;

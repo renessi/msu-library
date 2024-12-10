@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>МГУ каталог</title>
     <script src="https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js"></script>
-    <script type="module" crossorigin src="./assets/catalog-B0BToskz.js"></script>
-    <link rel="modulepreload" crossorigin href="./assets/main-c3IfIGk0.js">
-    <link rel="stylesheet" crossorigin href="./assets/main-BAoNJIgb.css">
+    <script type="module" crossorigin src="./assets/catalog-B5kmUYTp.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/main-DFeD0W8I.js">
+    <link rel="stylesheet" crossorigin href="./assets/main-DP0PCOy4.css">
   </head>
   <body class="layout">
     <!-- do not delete -->
@@ -19,25 +19,25 @@
         </svg>
         <!-- <img class="header__logo-img" src="../../06_shared/img/svg/logo.svg" alt="logo" /> -->
       </div>
-      <search class="search">
-      <form class="search__form" id="documentSearch">
-        <input
-          id="documentSearchInput"
-          class="search__input"
-          type="search"
-          name="search"
-          placeholder="Поиск по материалам"
-        />
-        <button class="search__round">
-          <svg class="search__icon">
-            <use href="#icon-arrow-right"></use>
-          </svg>
-        </button>
-      </form>
-    </search>
-     <button type="button" class="btn" tabindex="0">Скачать все</button>
-     <button type="button" class="btn btn--accent" tabindex="0">Добавить материал</button>
-      <button class="header__login">
+      <search class="search header__search">
+        <form class="search__form" id="documentSearch">
+          <input
+            id="documentSearchInput"
+            class="search__input"
+            type="search"
+            name="search"
+            placeholder="Поиск по материалам"
+          />
+          <button class="search__round">
+            <svg class="search__icon">
+              <use href="#icon-search"></use>
+            </svg>
+          </button>
+        </form>
+      </search>
+      <!-- <button type="button" class="btn" tabindex="0">Скачать все</button>
+      -->
+      <button type="button" class="btn btn--accent btn--disabled header__btn" tabindex="0" disabled>Добавить материал</button>  <button class="header__login">
         <svg class="header__icon" aria-label="user">
           <use href="#icon-user"></use>
         </svg>
@@ -168,7 +168,7 @@
       </div>
     </div>  <div class="filter" data-filter="item" data-filter-group="category">
       <div class="filter__top" data-filter="toggleList">
-        <span class="filter__text">Библиотека</span>
+        <span class="filter__text">Категория</span>
           <svg class="filter__icon">
             <use xlink:href="#icon-search"></use>
           </svg>

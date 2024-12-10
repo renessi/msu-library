@@ -6,6 +6,7 @@ body {
     background-color: rgb(var(--clr-primary-black));
     color: rgb(var(--clr-white));
     min-height: 100vh;
+    min-width: 768px;//because we do not have mobile design
 }
 .layout {
     display: grid;
