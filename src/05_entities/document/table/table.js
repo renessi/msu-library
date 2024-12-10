@@ -22,12 +22,12 @@ const gridTable = async() => {
         const gridOptions = {
             rowData: allDocuments,
             columnDefs: [
-                { field: "file", flex: 4, checkboxSelection: true, filter: true, filterParams: filterParamsText
+                { field: "file", flex: 9, checkboxSelection: true, filter: true, filterParams: filterParamsText
                 },
-                { field: "discipline", flex: 2, filter: true, filterParams: filterParamsText},
-                { field: "type", flex: 2, filter: true, filterParams: filterParamsText },
-                { field: "year", flex: 1, filter: 'agNumberColumnFilter', filterParams: filterParamsNumber },
-                { field: "author", flex: 2, filter: true, filterParams: filterParamsText,
+                { field: "discipline", flex: 4, filter: true, filterParams: filterParamsText},
+                { field: "type", width:'90px', filter: true, filterParams: filterParamsText },
+                { field: "year", width:'60px', filter: 'agNumberColumnFilter', filterParams: filterParamsNumber },
+                { field: "author", flex: 3, filter: true, filterParams: filterParamsText,
                     cellRenderer: function({data}) {
                         const shortName = authorsShortName(data.author)
                         return `

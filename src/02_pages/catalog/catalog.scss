@@ -2,4 +2,8 @@
     display: grid;
     grid-template-columns: minmax(min-content, 200px) 2fr;
     gap: 30px;
+
+    @media (max-width: 769px) {
+        grid-template-columns: 1fr;
+    }
 }
