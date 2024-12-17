@@ -5,6 +5,7 @@ export default [
     files: ["src/stories/*.js"],
     plugins: {
       storybook: storybook,
+      jest: pluginJest 
     },
   },
   {
