@@ -40,6 +40,9 @@ input[type="search"]::-webkit-search-results-decoration {
         border: none;
         background: transparent;
         width: 100%;
+        @media (max-width: 769px) {
+            margin-left: 10px;
+        }
     }
 
     &__round {
@@ -51,7 +54,9 @@ input[type="search"]::-webkit-search-results-decoration {
         height: 38px;
         border-radius: 50%;
         border: none;
-        background-color: rgb(var(--clr-dark-grey));
+        // background-color: rgb(var(--clr-dark-grey));
+        background-color: transparent;
+        color: rgb(var(--clr-pale-grey));
         cursor: pointer;
     }
 
