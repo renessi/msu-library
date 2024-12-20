@@ -22,9 +22,9 @@ const gridTable = async() => {
         const gridOptions = {
             rowData: allDocuments,
             columnDefs: [
-                { field: "file", flex: 9, checkboxSelection: true, filter: true, filterParams: filterParamsText
+                { field: "file", flex: 10, checkboxSelection: true, filter: true, filterParams: filterParamsText
                 },
-                { field: "discipline", flex: 4, filter: true, filterParams: filterParamsText},
+                { field: "discipline", flex: 3, filter: true, filterParams: filterParamsText},
                 { field: "type", width:'90px', filter: true, filterParams: filterParamsText },
                 { field: "year", width:'60px', filter: 'agNumberColumnFilter', filterParams: filterParamsNumber },
                 { field: "author", flex: 3, filter: true, filterParams: filterParamsText,
