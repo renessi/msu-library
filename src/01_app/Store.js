@@ -22,7 +22,7 @@ class Store {
         if (!this[filterKey]) return []
 
         const subjectsArr = []
-        for(let value of this[filterKey]) {
+        for (let value of this[filterKey]) {
             subjectsArr.push(value)
         }
         return subjectsArr
@@ -31,7 +31,7 @@ class Store {
     toggleFilterValue(filterKey, value) {
         if (!this[filterKey]) return
 
-        if(this[filterKey].has(value)) {
+        if (this[filterKey].has(value)) {
             this[filterKey].delete(value)
         } else {
             this[filterKey].add(value)
