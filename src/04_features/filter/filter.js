@@ -15,9 +15,9 @@ export function handleFilterClick(event) {
 
     const filterContainerNode = event.target.closest('[data-filter="item"]')
     
-    // console.log(event.target)
-    // console.log(datasetFilter)
-    // console.log(actions[datasetFilter])
+    console.log(event.target)
+    console.log(datasetFilter)
+    console.log(actions[datasetFilter])
 
     if(datasetFilter && actions[datasetFilter]) {
         if(event.target.getAttribute('type') !== 'checkbox') { // prevent double clickEvent on checkbox component
@@ -62,5 +62,6 @@ async function checkItem(filterContainerNode, dataFilterValue) {
     const docResponse = await getSearchedDocumentsToTable()
 
     await documentUpdate(docResponse)
+
 }
 

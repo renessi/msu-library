@@ -1,102 +1,85 @@
-import {getAllDocumentsToTable, getFileByLink} from "@/04_features/documents/documents.js"
-import { authorsShortName } from '@/06_shared/utils/authors';
+import {
+    getAllDocumentsToTable,
+    downloadFileByURL
+} from "@/04_features/documents/documents.js"
+import {
+    authorsShortName
+} from '@/06_shared/utils/authors';
 
-const parentNode = document.querySelector('#documentContainer')
-let  allDocuments =await getAllDocumentsToTable()
+const parentNode = document.querySelector('#documentContainer');
+let allDocuments = [];
 
-const gridTable = async() => {
+try {
+    allDocuments = await getAllDocumentsToTable();
+    allDocuments = allDocuments.slice(0, 500);
+    console.log('All documents:', allDocuments);
+} catch (error) {
+    console.error('Failed to load documents:', error);
+}
 
+const gridTable = async () => {
     try {
         let gridApi;
-        const filterParamsText =  {
-            filterOptions:['contains'],
-            debounceMs: 200,
-            maxNumConditions: 1
-        }
-    
-        const filterParamsNumber = {
-            filterOptions:['equals'],
-            debounceMs: 200,
-            maxNumConditions: 1
-        }
+
         const gridOptions = {
-            rowData: allDocuments,
+            rowData: allDocuments.slice(0, 500),
             columnDefs: [
-                { field: "file", flex: 10, checkboxSelection: true, filter: true, filterParams: filterParamsText
-                },
-                { field: "discipline", flex: 3, filter: true, filterParams: filterParamsText},
-                { field: "type", width:'90px', filter: true, filterParams: filterParamsText },
-                { field: "year", width:'60px', filter: 'agNumberColumnFilter', filterParams: filterParamsNumber },
-                { field: "author", flex: 3, filter: true, filterParams: filterParamsText,
-                    cellRenderer: function({data}) {
-                        const shortName = authorsShortName(data.author)
-                        return `
-                                <svg class="ag-theme-msu__user-img">
-                                    <use xlink:href="#icon-user"></use>
-                                </svg>
-                                <span>${shortName}</span>
-                        `
-                    }
-                },
-                // { field: "download", flex: 1,
-                //     cellRenderer: function() {
-                //         return `
-                //             <button class="ag-theme-msu__btn-download">  
-                //                 <svg class="ag-theme-msu__download-img">
-                //                     <use xlink:href="#icon-download"></use>
-                //                 </svg>
-                //             </button>
-                //         `
-                //     }
-                // },
+                { field: "file", checkboxSelection: true, filter: true },
+                { field: "discipline", filter: true },
+                { field: "type", filter: true },
+                { field: "year", filter: 'agNumberColumnFilter' },
+                { 
+                    field: "author", 
+                    filter: true,
+                    cellRenderer: ({ data }) => `<span>${authorsShortName(data.author)}</span>`
+                }
             ],
+            
             rowHeight: 68,
-            // rowSelection: 'multiple',
-            onRowClicked: async(event) => {
-                const data = event.data
-                if(data.is_file) {
-                    console.info('Document can be downloaded')
-                    await getFileByLink('1/README.md')
-                    // await getFileByLink(data.link)
-                } else {
-                    console.info('Document cannot be downloaded')
-                    window.open(data.link, '_blank').focus();
+            onRowClicked: async (event) => {
+                const data = event.data;
+                try {
+                    if (data.is_file) {
+                        console.info('Document can be downloaded');
+                        await downloadFileByURL(data.link); // Скачивание файла
+                    } else {
+                        console.info('Document cannot be downloaded');
+                        window.open(data.link, '_blank').active();
+                    }
+                } catch (error) {
+                    console.error('Error handling row click:', error);
                 }
             }
-        }
+        };
+
         return {
             init: (parentDiv) => {
                 gridApi = agGrid.createGrid(parentDiv, gridOptions);
             },
             update: (data) => {
-                gridApi.setGridOption("rowData", data);
+                gridApi.setRowData(data);
             }
-        }
-    } catch {
-        console.log('getAllDocumentsToTable request is failed')
-        return {
-            error: 'Error: getAllDocument is failed'
-        }
+        };
+    } catch (error) {
+        console.error('Error initializing table:', error);
+        return { error: 'Failed to initialize table' };
     }
-    
-}
+};
 
-const gTable = await gridTable()
+const gTable = await gridTable();
 
 export const documentInit = async () => {
-    
-    if(gTable.init) {
-        gTable.init(parentNode)
+    if (gTable.init) {
+        gTable.init(parentNode);
     } else {
-        parentNode.innerHTML = gTable.error
+        parentNode.innerHTML = gTable.error;
     }
-}
+};
 
 export const documentUpdate = (data = allDocuments) => {
-    if(gTable.update) {
-        gTable.update(data)
+    if (gTable.update) {
+        gTable.update(data);
     } else {
-        parentNode.innerHTML = gTable.error
+        parentNode.innerHTML = gTable.error;
     }
-}
-
+};

@@ -1,6 +1,6 @@
-
 .ag-theme-msu {
   color: white;
+
   .ag-root-wrapper {
     background: rgb(var(--clr-pale-grey));
   }
@@ -8,6 +8,7 @@
   .ag-root-wrapper-body.ag-layout-normal {
     height: initial;
   }
+
   .ag-header-viewport {
     display: none;
   }
@@ -26,9 +27,9 @@
     border: none;
     border-radius: 16px;
 
-      &:hover  {
-        cursor: pointer;
-      }
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .ag-row-odd {
@@ -43,7 +44,7 @@
     border: none;
   }
 
-  .ag-ltr .ag-cell > span {
+  .ag-ltr .ag-cell>span {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -60,10 +61,6 @@
   .ag-ltr .ag-cell-focus:not(.ag-cell-range-selected):focus-within {
     border: none;
     outline: none;
-  }
-
-  .ag-row-focus, .ag-row-selected {
-    background: rgb(var(--clr-selected));
   }
 
   .ag-row-selected::before {
@@ -97,9 +94,9 @@
     border: 1px solid rgb(var(--clr-dark-grey));
     border-radius: 100%;
 
-      &.ag-checked {
-        background: rgb(var(--clr-active-purple));
-      }
+    &.ag-checked {
+      background: rgb(var(--clr-active-purple));
+    }
   }
 
   .ag-checkbox-input-wrapper::before {
@@ -132,3 +129,6 @@
   }
 }
 
+.ag-theme-msu .ag-row-odd {
+  overflow: hidden;
+}

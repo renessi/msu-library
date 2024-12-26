@@ -2,8 +2,11 @@
     display: grid;
     grid-template-columns: minmax(min-content, 200px) 2fr;
     gap: 30px;
+}
 
-    @media (max-width: 769px) {
-        grid-template-columns: 1fr;
+/* Медиазапрос для экранов до 1024px */
+@media (max-width: 1024px) {
+    .catalog {
+        grid-template-columns: 1fr; /* Один столбец, элементы будут под друг другом */
     }
 }
