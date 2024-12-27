@@ -119,3 +119,25 @@ export const downloadFileByURL = async (fileURL) => {
         }, 1000);
     }
 };
+/**
+ * @param {string} searchValue for prompt
+ * @returns { Array<Document> } Documents for catalog table {@link Document}
+ */
+
+export const addMaterialPageResource = async(name, year, link, is_file, teacher,subject,category,semester_num) => {
+    
+    const { data } = await addMaterialPageResourcePost({
+        client:msuClient, 
+        body: {
+            name: name,
+            year: year,
+            link: link,
+            is_file: is_file,
+            teacher: teacher,
+            subject: subject,
+            category: category,
+            semester_num: semester_num,
+        }
+    })
+    console.log(data)
+}

@@ -5,12 +5,13 @@
     </svg>
     <!-- <img class="header__logo-img" src="../../06_shared/img/svg/logo.svg" alt="logo" /> -->
   </div>
-  {{>search class="header__search" }} 
-  <!-- {{>button}}  -->
-  {{>button-accent class="header__btn" }}
-  <button class="header__login">
+  {{>search}} {{>button}} {{>button-accent}}
+  <button class="header__login" id="header_login">
     <svg class="header__icon" aria-label="user">
       <use href="#icon-user"></use>
     </svg>
   </button>
+    {{> modal}}
+    {{> modalMaterial}}
 </header>
+
