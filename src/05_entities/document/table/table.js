@@ -1,4 +1,4 @@
-import {getAllDocumentsToTable, getFileByLink} from "@/04_features/documents/documents.js"
+import {getAllDocumentsToTable} from "@/04_features/documents/documents.js"
 import { authorsShortName } from '@/06_shared/utils/authors';
 
 const parentNode = document.querySelector('#documentContainer')

@@ -1,9 +1,5 @@
 import { msuClient } from "@/01_app/api/client.js"
-<<<<<<< HEAD
 import { getAllDocumentsResourcesGet, searchDocumentSearchGet, addMaterialPageResourcePost } from "@/01_app/api/client/services.gen"
-=======
-import { getAllDocumentsResourcesGet, searchDocumentSearchGet, downloadFileFromS3GetFileLinkGet } from "@/01_app/api/client/services.gen"
->>>>>>> main
 import store from "@/01_app/Store.js"
 
 // we need this type for document table 
@@ -86,7 +82,6 @@ export const getAllDocumentsToTable = async() => {
     return mappedData
 }
 
-<<<<<<< HEAD
 
 /**
  * @param {string} searchValue for prompt
@@ -109,52 +104,4 @@ export const addMaterialPageResource = async(name, year, link, is_file, teacher,
         }
     })
     console.log(data)
-=======
-export const getFileByLink = async(link) => {
-    const { data } = await downloadFileFromS3GetFileLinkGet({
-        client:msuClient, 
-        path: {
-            link: link
-        }
-    })
-    downloadBlob(data, link)
-}
-
-const downloadFileByURL = (fileURL) => {
-    const downloadLink = document.createElement('a');
-    downloadLink.href = fileURL;
-    downloadLink.download = fileURL.split('/').pop();
-    document.body.appendChild(downloadLink);
-    downloadLink.click();
-}
-
-function downloadBlob(blob, name = 'document.pdf') {
-    if (
-      window.navigator && 
-      window.navigator.msSaveOrOpenBlob
-    ) return window.navigator.msSaveOrOpenBlob(blob);
-
-    // For other browsers:
-    // Create a link pointing to the ObjectURL containing the blob.
-    const data = window.URL.createObjectURL(blob);
-
-    const link = document.createElement('a');
-    link.href = data;
-    link.download = name;
-
-    // this is necessary as link.click() does not work on the latest firefox
-    link.dispatchEvent(
-      new MouseEvent('click', { 
-        bubbles: true, 
-        cancelable: true, 
-        view: window 
-      })
-    );
-
-    setTimeout(() => {
-      // For Firefox it is necessary to delay revoking the ObjectURL
-      window.URL.revokeObjectURL(data);
-      link.remove();
-    }, 100);
->>>>>>> main
 }
