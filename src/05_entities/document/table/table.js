@@ -23,18 +23,32 @@ const gridTable = async () => {
 
         const gridOptions = {
             rowData: allDocuments.slice(0, 500),
-            columnDefs: [
-                { field: "file", checkboxSelection: true, filter: true },
-                { field: "discipline", filter: true },
-                { field: "type", filter: true },
-                { field: "year", filter: 'agNumberColumnFilter' },
-                { 
-                    field: "author", 
+            columnDefs: [{
+                    field: "file",
+                    checkboxSelection: true,
+                    filter: true
+                },
+                {
+                    field: "discipline",
+                    filter: true
+                },
+                {
+                    field: "type",
+                    filter: true
+                },
+                {
+                    field: "year",
+                    filter: 'agNumberColumnFilter'
+                },
+                {
+                    field: "author",
                     filter: true,
-                    cellRenderer: ({ data }) => `<span>${authorsShortName(data.author)}</span>`
+                    cellRenderer: ({
+                        data
+                    }) => `<span>${authorsShortName(data.author)}</span>`
                 }
             ],
-            
+
             rowHeight: 68,
             onRowClicked: async (event) => {
                 const data = event.data;
@@ -57,12 +71,14 @@ const gridTable = async () => {
                 gridApi = agGrid.createGrid(parentDiv, gridOptions);
             },
             update: (data) => {
-                gridApi.setRowData(data);
+                gridApi.setGridOption("rowData", data);
             }
         };
     } catch (error) {
         console.error('Error initializing table:', error);
-        return { error: 'Failed to initialize table' };
+        return {
+            error: 'Failed to initialize table'
+        };
     }
 };
 
