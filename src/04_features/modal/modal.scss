@@ -38,16 +38,14 @@
 
 .modal .submit-btn {
   padding: 10px 20px;
-  background-color: rgba(52, 33, 72, 1);
+  background: linear-gradient(175deg, rgb(var(--clr-gr-blue)) -75%, rgb(var(--clr-gr-purple)) 100%);
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  position: relative;
 }
 
-.modal .submit-btn:hover {
-  background-color: rgba(96, 136, 237, 1);
-}
 
 .modal .modal-close {
   position: absolute;

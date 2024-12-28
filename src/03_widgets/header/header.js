@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Получение всех нужных элементов
+  const headerIcon = document.querySelector('.header__icon')
   const userIcon = document.querySelector('.header__login');
-  const addMaterial = document.querySelector('.btn.btn--accent');
+  const addMaterial = document.getElementById('openMaterialModal');
   const modal = document.getElementById('login-modal');
   const uploadModal = document.getElementById('upload-modal');
   const closeModalButton = document.getElementById('modal-close');
@@ -9,8 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const fileInputGroup = document.getElementById('file-input-group');
   const linkInputGroup = document.getElementById('link-input-group');
   const toggleInputs = document.querySelectorAll('input[name="toggle"]');
-  const isAuth = localStorage.getItem("is_auth") === "true"? true : true;
-
+  const accessToken = localStorage.getItem("access_token");
+  const isAuth = accessToken !== null;
 
   // Переключение между "Загрузить файл" и "Вставить ссылку"
   toggleInputs.forEach((input) => {
@@ -26,14 +27,19 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Открытие модалки логина
-  if (userIcon) {
-    userIcon.addEventListener('click', () => {
-      modal.style.display = 'flex';
-    });
+  if (!isAuth) {
+    if (userIcon) {
+      userIcon.addEventListener('click', () => {
+        modal.style.display = 'flex';
+      });
+    } else {
+      console.error('Иконка логина не найдена!');
+    }
   } else {
-    console.error('Иконка логина не найдена!');
+    userIcon.style.background = 'rgb(16 170 16)';
+    headerIcon.style.color = '#fff';
+    console.log('Вы в системе!');
   }
-
   // Закрытие модалки логина
   if (closeModalButton) {
     closeModalButton.addEventListener('click', () => {
@@ -43,8 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
     console.error('Кнопка закрытия логин-модалки не найдена!');
   }
 
-
-  
   // Открытие модалки добавления материала
   if (addMaterial) {
     addMaterial.addEventListener('click', () => {
@@ -79,13 +83,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-document.addEventListener('DOMContentLoaded',() => {
+document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('login-modal');
   modal.style.display = 'none';
   const uploadModal = document.getElementById('upload-modal');
   uploadModal.style.display = 'none';
 })
-
-
-
-

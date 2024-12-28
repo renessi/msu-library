@@ -25,7 +25,7 @@
     color: rgb(var(--clr-white));
     background: rgb(var(--clr-primary-black));
     border: none;
-    border-radius: 16px;
+    border-radius: 0 16px 16px 0;
 
     &:hover {
       cursor: pointer;
@@ -128,7 +128,47 @@
     background: rgb(var(--clr-white));
   }
 }
+.ag-theme-msu .ag-row {
+  transition: all 1s ease-in-out;
+}
+.ag-theme-msu .ag-row:hover {
+  border-bottom: 0.5px solid;
+  border-top: 0.5px  solid;
+  border-color: rgb(172, 63, 255);
+  border-radius: 0;
 
+}
 .ag-theme-msu .ag-row-odd {
   overflow: hidden;
+  border-bottom: 0.5px solid;
+  border-top: 0.5px  solid;
+  border-color: black;
+  border-radius: 0 16px 16px 0;
+}
+
+.ag-theme-msu {
+  box-shadow: -7px -6px 11px -8px  rgba(255, 255, 255, 0.13);
+}
+.ag-theme-msu .ag-ltr .ag-cell:nth-child(1) {
+  width: 635px !important; 
+
+}
+.ag-theme-msu .ag-ltr .ag-cell:nth-child(2) {
+  width: 200px !important; 
+  left: 645px !important;
+}
+.ag-theme-msu .ag-ltr .ag-cell:nth-child(3) {
+  width: 100px !important; 
+  left: 870px !important;
+}
+.ag-theme-msu .ag-ltr .ag-cell:nth-child(4) {
+  width: 65px !important; 
+  left: 975px  !important;
+}
+.ag-theme-msu .ag-ltr .ag-cell:nth-child(5) {
+  width: 150px !important; 
+  left: 1050px !important;
+}
+.ag-center-cols-container {
+  width: 100% !important;
 }

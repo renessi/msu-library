@@ -4,6 +4,7 @@ import {
 import {
     getAllDocumentsResourcesGet,
     searchDocumentSearchGet,
+    addMaterialPageResourcePost
 } from "@/01_app/api/client/services.gen";
 import store from "@/01_app/Store.js";
 /**
@@ -48,6 +49,78 @@ export const getAllDocumentsToTable = async () => {
     }));
     return mappedData;
 };
+
+let isLoading = false;
+let errorMessage = null;
+
+const handleLogin = async (username, password) => {
+    errorMessage = null;
+
+    if (username && password) {
+        isLoading = true;
+        try {
+            const requestBody = new URLSearchParams({
+                grant_type: "password",
+                username: username,
+                password: password,
+                scope: "read write",
+                client_id: "",
+                client_secret: "",
+            }).toString();
+            // const response = await fetch(`${process.env.NODE_ENV}/login`,
+            const response = await fetch(`http://51.250.43.136:8080/login`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: requestBody,
+            });
+            if (response.ok) {
+                const data = await response.json();
+                localStorage.setItem('access_token', data.access_token);
+                document.getElementById('login-modal').style.display = 'none';
+                location.reload();
+            } else {
+                const data = await response.json();
+                errorMessage = data.message || "Неправильный логин или пароль";
+            }
+        } catch (error) {
+            if (error instanceof Error) {
+                errorMessage = "Ошибка при отправке данных: " + error.message;
+            } else {
+                errorMessage = "Неизвестная ошибка";
+            }
+        } finally {
+            isLoading = false;
+        }
+    } else {
+        errorMessage = "Заполните все поля!";
+    }
+};
+document.addEventListener("DOMContentLoaded", () => {
+    const loginForm = document.getElementById("login-form");
+    const errorMessageElement = document.getElementById("errorMessage");
+
+    loginForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const username = event.target.username.value;
+        const password = event.target.password.value;
+        errorMessageElement.textContent = "";
+        await handleLogin(username, password);
+        if (errorMessage) {
+            errorMessageElement.textContent = errorMessage;
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+        }
+    });
+
+    const closeButton = document.getElementById("modal-close");
+    closeButton.addEventListener("click", () => {
+        const modal = document.getElementById("login-modal");
+        modal.style.display = "none";
+    });
+});
+
 
 /**
  * Поиск документов по запросу
@@ -124,20 +197,28 @@ export const downloadFileByURL = async (fileURL) => {
  * @returns { Array<Document> } Documents for catalog table {@link Document}
  */
 
-export const addMaterialPageResource = async(name, year, link, is_file, teacher,subject,category,semester_num) => {
-    
-    const { data } = await addMaterialPageResourcePost({
-        client:msuClient, 
-        body: {
-            name: name,
-            year: year,
-            link: link,
-            is_file: is_file,
-            teacher: teacher,
-            subject: subject,
-            category: category,
-            semester_num: semester_num,
-        }
-    })
-    console.log(data)
-}
+export const addMaterialPageResource = async (name, year, link, is_file, teacher_name, subject_name, category_name, semester_num) => {
+    try {
+        const {
+            data
+        } = await addMaterialPageResourcePost({
+            client: msuClient,
+            body: {
+                name: name,
+                year: year,
+                link: link,
+                is_file: is_file,
+                teacher_name: teacher_name,
+                subject_name: subject_name,
+                category_name: category_name,
+                semester_num: semester_num,
+            }
+        });
+        console.log('Ресурс успешно добавлен:', data);
+        location.reload();
+        return data;
+    } catch (error) {
+        console.error('Ошибка при добавлении ресурса:', error.message);
+        throw error;
+    }
+};
