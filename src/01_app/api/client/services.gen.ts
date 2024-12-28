@@ -54,6 +54,8 @@ export const addMaterialPageResourcePost = <
 >(
   options: Options<AddMaterialPageResourcePostData, ThrowOnError>,
 ) => {
+  const token = localStorage.getItem('access_token'); // Получаем токен
+
   return (options?.client ?? client).post<
     AddMaterialPageResourcePostResponse,
     AddMaterialPageResourcePostError,
@@ -61,6 +63,10 @@ export const addMaterialPageResourcePost = <
   >({
     ...options,
     url: "/resource",
+    headers: {
+      ...options.headers, // Сохраняем другие заголовки, если они есть
+      'Authorization': `Bearer ${token}`, // Добавляем токен авторизации
+    }
   });
 };
 

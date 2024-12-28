@@ -110,3 +110,16 @@ export type DownloadFileFromS3GetFileLinkGetData = {
 export type DownloadFileFromS3GetFileLinkGetResponse = unknown;
 
 export type DownloadFileFromS3GetFileLinkGetError = HTTPValidationError;
+
+export interface LoginPostData {
+  username: string;
+  password: string;
+}
+
+export interface LoginPostResponse {
+  access_token: string;
+}
+
+export interface LoginPostError {
+  message: string;
+}

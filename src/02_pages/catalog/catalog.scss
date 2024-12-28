@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: minmax(min-content, 200px) 2fr;
     gap: 30px;
+    padding-top: 15px;
 }
 
 /* Медиазапрос для экранов до 1024px */
