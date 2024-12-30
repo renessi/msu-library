@@ -12,16 +12,13 @@
         background: rgb(var(--clr-secondary-grey));
         border-radius: 0 0 10px 10px;
         width: 200px;    
-        overflow-y: scroll;
         transform: translateY(-50%);
         opacity: 0;
         transition: 
         opacity 0.2s ease-in-out,
         transform 0.5s ease-in-out;
     }
-    &__menu::-webkit-scrollbar{
-        width: 4px;
-    }
+
     &__menu::-webkit-scrollbar-track{
         background: rgb(var(--clr-primary-grey));
     }
@@ -153,6 +150,7 @@
         .filter__menu {
             transform: translateY(0);
             opacity: 1;
+            width: 100%;
         }
     }
 }

@@ -154,6 +154,43 @@ export const getSearchedDocumentsToTable = async () => {
         link: document.link
     }));
     return mappedData;
+
+};
+
+
+export const getUniqueOptions = async () => {
+    const filterQuery = {
+        subjectArray: store.subject.size ? store.getFilterArrByKey('subject').join(',') : '',
+        semesterArray: store.semester.size ? store.getFilterArrByKey('semester').join(',') : '',
+        subjectTypeArray: store.category.size ? store.getFilterArrByKey('category').join(',') : '',
+    };
+
+    const { data } = await searchDocumentSearchGet({
+        client: msuClient,
+        query: {
+            prompt: store.search,
+            ...filterQuery
+        }
+    });
+
+    const semestersSet = new Set(data.map(document => document.semester_num));
+    const uniqueSemesters = Array.from(semestersSet).sort((a, b) => a - b); 
+
+    const subjectsSet = new Set(data.map(document => document.subject_name));
+    const uniqueSubjects = Array.from(subjectsSet);
+
+    const professorsSet = new Set(data.map(document => document.teacher_name));
+    const uniqueProfessors = Array.from(professorsSet);
+
+    const categoriesSet = new Set(data.map(document => document.category_name));
+    const uniqueCategories = Array.from(categoriesSet);
+
+    return {
+        semesters: uniqueSemesters,
+        subjects: uniqueSubjects,
+        professors: uniqueProfessors,
+        categories: uniqueCategories
+    };
 };
 
 /**

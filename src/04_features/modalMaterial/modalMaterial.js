@@ -34,3 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('Кнопка с ID "submitButton" не найдена.');
     }
 }, false);
+
+
+

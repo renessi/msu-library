@@ -6,7 +6,6 @@ body {
     background-color: rgb(var(--clr-primary-black));
     color: rgb(var(--clr-white));
     min-height: 100vh;
-    min-width: 768px; //because we do not have mobile design
 }
 .layout {
     display: grid;
@@ -25,4 +24,26 @@ svg {
 
 ul, ol, dl {
     margin: 0;
+}
+@media (max-width: 1024px) {
+    :root {
+      --contentWidth: var(--desktop)
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+      --contentWidth: var(--tablet)
+    }
+}
+@media (max-width: 426px) {
+  :root {
+    --contentWidth: var(--mobile)
+  }
+}
+
+@media (max-width: 375px) {
+    :root {
+      --contentWidth: var(--mobile_small)
+    }
 }

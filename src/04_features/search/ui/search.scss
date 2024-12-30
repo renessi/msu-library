@@ -7,8 +7,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .search {
-    width: 100%;
-    max-width: 614px;
+    width: 600px;
     &__form {
         display: flex;
         align-items: center;
@@ -68,9 +67,9 @@ input[type="search"]::-webkit-search-results-decoration {
     }
 }
 
-@media  (max-width: 992px) {
+@media  (max-width: 1024px) {
     .search {
-        max-width: 414px;
+        width: 100%;
     }
 }
 

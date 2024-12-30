@@ -26,6 +26,51 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Функция для обновления иконки
+// Пример функции для проверки состояния авторизации
+function checkAuthStatus() {
+  return localStorage.getItem("access_token") !== null; // Проверяем наличие токена
+}
+
+// Инициализация состояния авторизации
+let isAuthenticated = checkAuthStatus(); // Изменено на let, чтобы переменная могла изменяться
+
+// Получаем элементы
+const icon = document.getElementById("icon");
+const loginButton = document.getElementById("header_login");
+
+// Функция для обновления иконки
+function updateLoginIcon() {
+  if (isAuthenticated) {
+      icon.src = "../../06_shared/img/svg/door.svg"; // Путь к иконке двери
+      icon.alt = "door-logo"; // Меняем альтернативный текст
+  } else {
+      icon.src = "../../06_shared/img/svg/user.svg"; // Путь к иконке пользователя
+      icon.alt = "user-logo"; // Восстанавливаем альтернативный текст
+  }
+}
+
+// Обновляем иконку при загрузке
+updateLoginIcon();
+
+// Обработчик событий для кнопки
+loginButton.addEventListener("click", function() {
+  if (isAuthenticated) {
+      // Если пользователь авторизован, удаляем токен из localStorage
+      localStorage.removeItem("access_token"); // Убедитесь, что вы используете правильный ключ для удаления токена
+      isAuthenticated = false; // Обновляем статус авторизации
+
+      // Обновляем иконку
+      updateLoginIcon();
+      location.reload();
+      console.log("Токен удалён, пользователь вышел из системы."); // Логирование для отладки
+  } else {
+      // Обработка событий для неавторизованного пользователя
+      console.log("Пользователь не авторизован. Переход на страницу входа.");
+  }
+});
+
+
   // Открытие модалки логина
   if (!isAuth) {
     if (userIcon) {
@@ -36,8 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('Иконка логина не найдена!');
     }
   } else {
-    userIcon.style.background = 'rgb(16 170 16)';
-    headerIcon.style.color = '#fff';
     console.log('Вы в системе!');
   }
   // Закрытие модалки логина
@@ -89,3 +132,37 @@ document.addEventListener('DOMContentLoaded', () => {
   const uploadModal = document.getElementById('upload-modal');
   uploadModal.style.display = 'none';
 })
+
+document.addEventListener("DOMContentLoaded", function() {
+  const searchElement = document.querySelector('.search');
+  const headerElement = document.querySelector('.header');
+
+  function moveSearch() {
+    const logoElement = headerElement.querySelector('.header-wrapper__logo');
+    const buttonAccentElement = headerElement.querySelector('.header-wrapper .button-accent');
+
+    if (window.innerWidth <= 426) {
+      if (searchElement && searchElement.parentNode !== headerElement) {
+        headerElement.appendChild(searchElement);
+      }
+    } else {
+      if (searchElement && searchElement.parentNode === headerElement) {
+        if (logoElement && searchElement.parentNode === headerElement) {
+          logoElement.parentNode.insertBefore(searchElement, buttonAccentElement);
+        }
+      } else if (!searchElement.parentNode) {
+        headerElement.querySelector('.header-wrapper').insertBefore(searchElement, buttonAccentElement);
+      }
+    }
+  }
+
+  // Изначально перемещаем элемент
+  moveSearch();
+
+  // Дебаунсинг события resize
+  let resizeTimeout;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(moveSearch, 100); // Используем 100 мс для дебаунса
+  });
+});

@@ -1,6 +1,6 @@
 import { documentUpdate } from '@/05_entities/document/table/table.js'
 import { getSearchedDocumentsToTable } from '@/04_features/documents/documents.js';
-// import { getAllDocumentsToTable } from '@/04_features/documents/documents.js';
+import { getAllDocumentsToTable } from '@/04_features/documents/documents.js';
 import store from '@/01_app/Store.js';
 
 const actions = {
@@ -56,12 +56,21 @@ function hiddenListItems(listItemsNode, value) {
 }
 
 async function checkItem(filterContainerNode, dataFilterValue) {
-    const filterGroupValue = filterContainerNode.dataset.filterGroup
+    const filterGroupValue = filterContainerNode.dataset.filterGroup;
 
-    store.toggleFilterValue(filterGroupValue, dataFilterValue)
-    const docResponse = await getSearchedDocumentsToTable()
+    // Изменяем состояние фильтра
+    store.toggleFilterValue(filterGroupValue, dataFilterValue);
+    
+    // Получаем обновленный список документов
+    const docResponse = await getSearchedDocumentsToTable();
+    const allDocsResponse = await getAllDocumentsToTable();
 
-    await documentUpdate(docResponse)
-
+    // Проверяем, есть ли результаты
+    if (docResponse.length > 0) {
+        // Если есть, обновляем отображение
+        await documentUpdate(docResponse);
+    } else {
+        // Если нет, получаем и отображаем все документы
+        await documentUpdate(allDocsResponse);
+    }
 }
-

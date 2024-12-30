@@ -1,67 +1,58 @@
 <!-- modalMaterial.html -->
 <div id="upload-modal" class="upload-modal">
-    <div class="modal-content">
-      <button class="modal-close" id="UploadModal-close">&times;</button>
-      <h2>Страница загрузки материала</h2>
-      <form id="upload-form">
-        <div class="input-group">
-          <label for="name">Имя файла</label>
-          <input type="text" id="name" name="name" required>
-        </div>
-        <div class="input-group">
-          <label for="semester">Семестр (из списка)</label>
-          <select id="semester" name="semester" required>
-            <option value="1">1</option>
-            <option value="2">2</option>
-          </select>
-        </div>
-        <div class="input-group">
-          <label for="subject_name">Предмет (из списка)</label>
-          <select id="subject_name" name="subject_name" required>
-            <option value="Экономическая теория">Экономическая теория</option>
-            <option value="physics">Физика</option>
-          </select>
-        </div>
-        <div class="input-group">
-          <label for="professor">Препод (из списка)</label>
-          <select id="professor" name="professor" required>
-            <option value="Голубева Екатерина Олеговна">Голубева Екатерина Олеговна</option>
-            <option value="Петров">Петров</option>
-          </select>
-        </div>
-        <div class="input-group">
-          <label for="category_name">Категория (из списка)</label>
-          <select id="category_name" name="category_name" required>
-            <option value="Семинар">Семинар</option>
-            <option value="practice">Практика</option>
-          </select>
-        </div>
-        <div class="input-group">
-          <label for="year">Год</label>
-          <input type="number" id="year" name="year" min="2000" max="2100" required>
-        </div>
-  
-        <div class="toggle-group">
-          <label>Загрузить файл или вставить ссылку</label>
-          <div>
-            <input type="radio" id="upload-file" name="toggle" value="file" checked>
-            <label for="upload-file">Файл</label>
-            <input type="radio" id="upload-link" name="toggle" value="link">
-            <label for="upload-link">Ссылка</label>
-          </div>
-        </div>
-  
-        <div class="input-group" id="file-input-group">
-          <label for="file">Загрузить файл</label>
-          <input type="file" id="file" name="file">
-        </div>
-        <div class="input-group" id="link-input-group" style="display: none;">
-          <label for="link">Ссылка</label>
-          <input type="url" id="link" name="link">
-        </div>
-  
-        <div class="submit-btn" id="submitButton">Отправить</div>
-      </form>
+  <div class="modal-content">
+    <button class="modal-close" id="UploadModal-close">&times;</button>
+    <h4 class="upload-modal__title">Страница загрузки материала</h4>
+    <form id="upload-form">
+      <div class="input-group">
+        <input placeholder="Название файла" type="text" id="name" name="name" required>
+      </div>
+
+      <div class="input-group custom-select">
+        <input type="hidden" name="semester" id="semester">
+        <div class="selected">Выберите семестр</div>
+        <div class="options"></div>
     </div>
+
+      <div class="input-group custom-select">
+        <input type="hidden" name="subject_name" id="subject_name">
+        <div class="selected">Выберите предмет</div>
+        <div class="options"></div>
+    </div>
+
+      <div class="input-group custom-select">
+        <input type="hidden" name="professor" id="professor">
+        <div class="selected">Выберите преподавателя</div>
+        <div class="options"></div>
+    </div>
+
+      <div class="input-group custom-select">
+        <input type="hidden" name="category_name" id="category_name">
+        <div class="selected">Выберите категорию</div>
+        <div class="options"></div>
+    </div>
+      <div class="input-group">
+        <input placeholder="Выберите год" type="number" id="year" name="year" min="2000" max="2100" required>
+      </div>
+
+      <div class="toggle-group">
+        <div>
+          <input type="radio" id="upload-file" name="toggle" value="file" checked>
+          <label for="upload-file">Файл</label>
+          <input type="radio" id="upload-link" name="toggle" value="link">
+          <label for="upload-link">Ссылка</label>
+        </div>
+      </div>
+
+      <div class="input-group" id="file-input-group">
+        <input type="file" id="file" name="file">
+      </div>
+      <div class="input-group" id="link-input-group" style="display: none;">
+        <label for="link">Ссылка</label>
+        <input type="url" id="link" name="link">
+      </div>
+
+      <div class="submit-btn" id="submitButton">Отправить</div>
+    </form>
   </div>
-  
+</div>
