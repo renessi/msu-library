@@ -47,11 +47,8 @@
 
 #professor {
   max-height: 120px;
-  /* Максимальная высота */
   overflow-y: auto;
-  /* Добавляем вертикальную прокрутку */
   display: block;
-  /* Убираем лишнее пространство */
 }
 
 .upload-modal .toggle-group {
