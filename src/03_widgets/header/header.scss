@@ -72,12 +72,31 @@
     width: 44px;
     height: 30px;
 }
+
 .header-wrapper__login:hover {
     background-color: white;
 }
+
 .header-wrapper__logo {
     margin-top: -65px;
 }
+
+@media (max-width: 376px) {
+    .header-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        justify-items: center;
+        gap: 40px;
+        padding: 40px 30px 20px 30px;
+
+        &__logo {
+            grid-column: 1 / span 2;
+            margin-left: 30px;
+        }
+    }
+}
+
 @media (max-width: 320px) {
     .header-wrapper {
         display: grid;
@@ -85,16 +104,16 @@
         grid-template-rows: repeat(2, 1fr);
         justify-items: center;
         gap: 40px;
-        padding: 40px 30px 50px 30px;
+        padding: 40px 30px 20px 30px;
 
 
         &__logo {
             grid-column: 1 / span 2;
-    margin-left: 30px;
+            margin-left: 30px;
         }
     }
 
- 
+
 }
 
 .snowblock {
