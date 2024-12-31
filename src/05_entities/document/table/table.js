@@ -33,6 +33,8 @@ const gridTable = async () => {
                 {
                     field: "discipline",
                     filter: true,
+                    width: 210,
+
                 },
                 {
                     field: "type",
@@ -49,6 +51,7 @@ const gridTable = async () => {
                 {
                     field: "author",
                     filter: true,
+                    width: 125,
                     cellRenderer: ({
                         data
                     }) => `<span>${authorsShortName(data.author)}</span>`
