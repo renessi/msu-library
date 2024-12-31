@@ -81,7 +81,7 @@
     margin-top: -65px;
 }
 
-@media (max-width: 426px) {
+@media (max-width: 431px) {
     .header-wrapper {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -95,8 +95,13 @@
             margin-left: 30px;
         }
     }
+    .upload-modal .modal-close{
+        top: 0;
+    }
 }
+@media (max-width: 376px) {
 
+}
 @media (max-width: 320px) {
     .header-wrapper {
         display: grid;
