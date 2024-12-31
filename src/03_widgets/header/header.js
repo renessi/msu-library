@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const logoElement = headerElement.querySelector('.header-wrapper__logo');
     const buttonAccentElement = headerElement.querySelector('.header-wrapper .button-accent');
 
-    if (window.innerWidth <= 426) {
+    if (window.innerWidth <= 640) {
       if (searchElement && searchElement.parentNode !== headerElement) {
         headerElement.appendChild(searchElement);
       }
