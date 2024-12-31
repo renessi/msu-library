@@ -26,19 +26,25 @@ const gridTable = async () => {
             columnDefs: [{
                     field: "file",
                     checkboxSelection: true,
-                    filter: true
+                    filter: true,
+                    width: 600,
+
                 },
                 {
                     field: "discipline",
-                    filter: true
+                    filter: true,
                 },
                 {
                     field: "type",
-                    filter: true
+                    filter: true,
+                    width: 100,
+
                 },
                 {
                     field: "year",
-                    filter: 'agNumberColumnFilter'
+                    filter: 'agNumberColumnFilter',
+                    width: 70,
+
                 },
                 {
                     field: "author",
