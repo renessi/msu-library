@@ -8,7 +8,60 @@
         <input placeholder="Название файла" type="text" id="name" name="name" required>
       </div>
 
-      <div class="input-group custom-select">
+      <div class="input-group">
+        <select id="semester" name="semester" required>
+          <option value="">Выберите семестр</option>
+          <option value="---">---</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <select id="subject_name" name="subject_name" required>
+          <option>Выберите предмет</option>
+          <option value="---">---</option>
+          <option value="">Вариационное исчисление и оптимальное управление</option>
+          <option value="">Дискретная математика</option>
+          <option value="">Классическая механика</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <select id="professor" name="professor" required>
+          <option value="">Выберите преподавателя</option>
+          <option value="---">---</option>
+          <option value="Олег">Зубелевич Олег Эдуардович</option>
+          <option value="Дмитрий">Трещев Дмитрий Валерьевич</option>
+          <option value="Александр">Чашкин Александр Викторович</option>
+          <option value="Роман">Колпаков Роман Максимович</option>
+          <option value="Вадим">Кочергин Вадим Васильевич</option>
+          <option value="Анастасия">Васильева Анастасия Андреевна</option>
+          <option value="Георгий">Магарил-Ильяев Георгий Георгиевич</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <select id="category_name" name="category_name" required>
+          <option value="">Выберите категорию</option>
+          <option value="---">---</option>
+          <option value="Лекции">Лекции</option>
+          <option value="Экзамен">Экзамен</option>
+          <option value="КР">КР</option>
+          <option value="Семинары">Семинары</option>
+          <option value="Литература">Литература</option>
+          <option value="Другое">Другое</option>
+        </select>
+      </div>
+
+      <!-- <div class="input-group custom-select">
         <input type="hidden" name="semester" id="semester">
         <div class="selected">Выберите семестр</div>
         <div class="options"></div>
@@ -30,7 +83,9 @@
         <input type="hidden" name="category_name" id="category_name">
         <div class="selected">Выберите категорию</div>
         <div class="options"></div>
-    </div>
+    </div> -->
+
+
       <div class="input-group">
         <input placeholder="Выберите год" type="number" id="year" name="year" min="2000" max="2100" required>
       </div>

@@ -18,4 +18,5 @@ export const icons = [
      {name: "Search", icon: IconSearch},
      {name: "Up", icon: IconUp},
      {name: "Down", icon: IconDown},
+     {name: "Down", icon: IconDown},
 ] 

@@ -2,13 +2,17 @@
   <div class="header-wrapper">
     <div class="header-wrapper__logo">
       <!-- <img src="../img/001.png" alt="logo"> -->
-      <a href="/">
-        <img class="header-wrapper__logo-img snowblock" src="../../06_shared/img/004.png" alt="logo" />
-      </a>
+        <img class="header-wrapper__logo-img snowblock" src="./004.png" alt="logo" />
+        <!-- <svg class="header__logo-img" aria-label="logo">
+          <use href="#icon-logo"></use>
+        </svg> -->
     </div>
     {{>search}} {{>button-accent}}
     <button class="header-wrapper__login" id="header_login">
-        <img class="header-wrapper__icon header__login" aria-label="user" id="icon" src="../../06_shared/img/svg/user.svg" alt="user-logo">
+        <!-- <img class="header-wrapper__icon header__login" aria-label="user" id="icon" src="../../06_shared/img/svg/user.svg" alt="user-logo"> -->
+        <svg class="header-wrapper__icon header__login" aria-label="logo">
+          <use id="login-icon" href="#icon-user"></use>
+        </svg>
     </button>
     {{> modal}}
     {{> modalMaterial}}

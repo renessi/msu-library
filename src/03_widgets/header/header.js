@@ -27,48 +27,37 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Функция для обновления иконки
-// Пример функции для проверки состояния авторизации
-function checkAuthStatus() {
-  return localStorage.getItem("access_token") !== null; // Проверяем наличие токена
-}
-
-// Инициализация состояния авторизации
-let isAuthenticated = checkAuthStatus(); // Изменено на let, чтобы переменная могла изменяться
-
-// Получаем элементы
-const icon = document.getElementById("icon");
-const loginButton = document.getElementById("header_login");
-
-// Функция для обновления иконки
-function updateLoginIcon() {
-  if (isAuthenticated) {
-      icon.src = "../../06_shared/img/svg/door.svg"; // Путь к иконке двери
-      icon.alt = "door-logo"; // Меняем альтернативный текст
-  } else {
-      icon.src = "../../06_shared/img/svg/user.svg"; // Путь к иконке пользователя
-      icon.alt = "user-logo"; // Восстанавливаем альтернативный текст
+  function checkAuthStatus() {
+    return localStorage.getItem("access_token") !== null;
   }
+
+  let isAuthenticated = checkAuthStatus();
+  const icon = document.getElementById("icon");
+  const loginButton = document.getElementById("header_login");
+
+  const loginIconElement = document.getElementById('login-icon');
+
+
+function updateLoginIcon() {
+    loginIconElement.setAttribute('href', isAuthenticated ? '#icon-arrow-right' : '#icon-user');
 }
 
-// Обновляем иконку при загрузке
 updateLoginIcon();
 
-// Обработчик событий для кнопки
-loginButton.addEventListener("click", function() {
-  if (isAuthenticated) {
-      // Если пользователь авторизован, удаляем токен из localStorage
-      localStorage.removeItem("access_token"); // Убедитесь, что вы используете правильный ключ для удаления токена
-      isAuthenticated = false; // Обновляем статус авторизации
+  updateLoginIcon();
 
-      // Обновляем иконку
+  loginButton.addEventListener("click", function () {
+    if (isAuthenticated) {
+      localStorage.removeItem("access_token");
+      isAuthenticated = false;
+
       updateLoginIcon();
       location.reload();
-      console.log("Токен удалён, пользователь вышел из системы."); // Логирование для отладки
-  } else {
-      // Обработка событий для неавторизованного пользователя
+      console.log("Токен удалён, пользователь вышел из системы.");
+    } else {
       console.log("Пользователь не авторизован. Переход на страницу входа.");
-  }
-});
+    }
+  });
 
 
   // Открытие модалки логина
@@ -87,6 +76,7 @@ loginButton.addEventListener("click", function() {
   if (closeModalButton) {
     closeModalButton.addEventListener('click', () => {
       modal.style.display = 'none';
+      console.log('click ')
     });
   } else {
     console.error('Кнопка закрытия логин-модалки не найдена!');
@@ -118,6 +108,8 @@ loginButton.addEventListener("click", function() {
   window.addEventListener('click', (e) => {
     if (e.target === modal) {
       modal.style.display = 'none';
+      console.log('ckicj');
+      
     }
     if (e.target === uploadModal) {
       uploadModal.style.display = 'none';
@@ -133,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
   uploadModal.style.display = 'none';
 })
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   const searchElement = document.querySelector('.search');
   const headerElement = document.querySelector('.header');
 
@@ -156,13 +148,11 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
-  // Изначально перемещаем элемент
   moveSearch();
 
-  // Дебаунсинг события resize
   let resizeTimeout;
-  window.addEventListener('resize', function() {
+  window.addEventListener('resize', function () {
     clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(moveSearch, 100); // Используем 100 мс для дебаунса
+    resizeTimeout = setTimeout(moveSearch, 100);
   });
 });

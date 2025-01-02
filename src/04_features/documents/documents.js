@@ -68,13 +68,14 @@ const handleLogin = async (username, password) => {
                 client_secret: "",
             }).toString();
             // const response = await fetch(`${process.env.NODE_ENV}/login`,
-            const response = await fetch(`http://51.250.43.136:8080/login`, {
+            const response = await fetch(production ? 'https://51.250.43.136:8080/' : 'https://51.250.43.136/', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/x-www-form-urlencoded",
                 },
                 body: requestBody,
             });
+            
             if (response.ok) {
                 const data = await response.json();
                 localStorage.setItem('access_token', data.access_token);
@@ -97,6 +98,7 @@ const handleLogin = async (username, password) => {
         errorMessage = "Заполните все поля!";
     }
 };
+
 document.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.getElementById("login-form");
     const errorMessageElement = document.getElementById("errorMessage");
