@@ -68,7 +68,7 @@ const handleLogin = async (username, password) => {
                 client_secret: "",
             }).toString();
             // const response = await fetch(`${process.env.NODE_ENV}/login`,
-            const response = await fetch(production ? 'https://51.250.43.136:8080/' : 'https://51.250.43.136/', {
+            const response = await fetch(`https://dmvn2.ru:443/login`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/x-www-form-urlencoded",
@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
  */
 export const getSearchedDocumentsToTable = async () => {
     const filterQuery = {
-        subjectArray: store.subject.size ? store.getFilterArrByKey('subject').join(',') : '',
+        subjectArray: store.subject.size ? store.getFilterArrByKey('subject__').join(',') : '',
         semesterArray: store.semester.size ? store.getFilterArrByKey('semester').join(',') : '',
         teacherArray: store.teacher.size ? store.getFilterArrByKey('teacher').join(',') : '',
         subjectTypeArray: store.category.size ? store.getFilterArrByKey('category').join(',') : '',
@@ -165,6 +165,7 @@ export const getUniqueOptions = async () => {
         subjectArray: store.subject.size ? store.getFilterArrByKey('subject').join(',') : '',
         semesterArray: store.semester.size ? store.getFilterArrByKey('semester').join(',') : '',
         subjectTypeArray: store.category.size ? store.getFilterArrByKey('category').join(',') : '',
+        subjectTypeArray: store.teacher.size ? store.getFilterArrByKey('teacher').join(',') : '',
     };
 
     const { data } = await searchDocumentSearchGet({

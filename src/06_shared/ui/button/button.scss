@@ -65,6 +65,12 @@
   display: none;
 }
 
+.btn--accent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (max-width: 1024px) {
   .btn-desktop {
     display: none;
@@ -73,6 +79,7 @@
   .btn-mobile {
     display: block;
   }
+
   .btn--accent {
     font-size: 30px;
     padding: 10px 13px;

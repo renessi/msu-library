@@ -1,11 +1,10 @@
 import {
     addMaterialPageResource
 } from '@/04_features/documents/documents.js';
-
 document.addEventListener('DOMContentLoaded', () => {
     const submitButton = document.getElementById('submitButton');
     const loginModal = document.getElementById('login-modal');
-    console.log(submitButton);
+    
     if (submitButton) {
         submitButton.addEventListener('click', (event) => {
             event.stopPropagation();
@@ -16,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 loginModal();
                 return;
             }
+
             try {
                 const name = document.getElementById('name')?.value || '';
                 const semester_num = document.getElementById('semester')?.value || '';
@@ -23,17 +23,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 const teacher = document.getElementById('professor')?.value || '';
                 const category = document.getElementById('category_name')?.value || '';
                 const year = document.getElementById('year')?.value || '';
-                const link = document.getElementById('link')?.value || '';
-                const is_file = document.getElementById('is_file')?.checked || false;
-                addMaterialPageResource(name, year, link, is_file, teacher, subject, category, semester_num);
+                
+                const isFile = document.getElementById('upload-file').checked;
+                let link = '';
+                
+                if (isFile) {
+                    const fileInput = document.getElementById('file');
+                    if (fileInput.files.length > 0) {
+                        // Получаем имя файла, вы можете изменить это для ваших нужд
+                        link = fileInput.files[0].name; 
+                    }
+                } else {
+                    link = document.getElementById('link')?.value || '';
+                }
+
+                addMaterialPageResource(name, year, link, isFile, teacher, subject, category, semester_num);
             } catch (error) {
                 console.error('Ошибка при обработке формы:', error);
             }
+            console.log(link);
         }, false);
     } else {
         console.error('Кнопка с ID "submitButton" не найдена.');
     }
 }, false);
-
-
 

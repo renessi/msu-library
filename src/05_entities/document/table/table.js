@@ -64,15 +64,16 @@ const gridTable = async () => {
                 try {
                     if (data.is_file) {
                         console.info('Document can be downloaded');
-                        await downloadFileByURL(data.link); // Скачивание файла
+                        await downloadFileByURL(data.link); 
                     } else {
                         console.info('Document cannot be downloaded');
-                        window.open(data.link, '_blank').active();
+                        alert("Нет файла для скачивания")
                     }
                 } catch (error) {
                     console.error('Error handling row click:', error);
                 }
             }
+            
         };
 
         return {

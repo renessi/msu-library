@@ -1,7 +1,7 @@
 // import { client } from "@/01_app/api/client/services.gen"
 import { createClient } from '@hey-api/client-fetch';
 export const msuClient = createClient({
-    baseUrl: process.env.NODE_ENV === 'production' ? 'https://51.250.43.136:8080/' : 'https://51.250.43.136/',
+    baseUrl: process.env.NODE_ENV === 'production' ? 'https://dmvn2.ru:443/' : 'https://dmvn2.ru/',
 });
 // 'https://51.250.43.136/' : 'http://51.250.43.136:8080/',
 msuClient.interceptors.response.use((response) => {

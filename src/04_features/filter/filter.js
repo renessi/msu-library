@@ -50,27 +50,28 @@ function visibleListItems(listItemsNode) {
 }
 
 function hiddenListItems(listItemsNode, value) {
+    const trimmedValue = value.trim().toLowerCase(); 
     listItemsNode.forEach((itemNode) => {
-        if(!itemNode.dataset.filterValue.includes(value)) itemNode.classList.add('--hidden')
-    })
+        const filterValue = itemNode.dataset.filterValue.trim().toLowerCase(); 
+        if (!filterValue.includes(trimmedValue)) {
+            itemNode.classList.add('--hidden');
+        } else {
+            itemNode.classList.remove('--hidden'); 
+        }
+    });
 }
 
 async function checkItem(filterContainerNode, dataFilterValue) {
     const filterGroupValue = filterContainerNode.dataset.filterGroup;
 
-    // Изменяем состояние фильтра
     store.toggleFilterValue(filterGroupValue, dataFilterValue);
     
-    // Получаем обновленный список документов
     const docResponse = await getSearchedDocumentsToTable();
     const allDocsResponse = await getAllDocumentsToTable();
 
-    // Проверяем, есть ли результаты
     if (docResponse.length > 0) {
-        // Если есть, обновляем отображение
         await documentUpdate(docResponse);
     } else {
-        // Если нет, получаем и отображаем все документы
         await documentUpdate(allDocsResponse);
     }
 }
